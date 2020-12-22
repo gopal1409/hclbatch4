@@ -3,9 +3,15 @@
  hosts: db1
  vars:
   motd_centos: "Welcome to Centos Linux - Ansible Rock"
+  motd_ubuntu: "Welcome to Ubuntu Linux"
  tasks:
   - name: configure a motd 
     copy:
-      content: "{{ motd_centos }}"
+      content: '{{ motd_centos }}'
       dest: /etc/motd
+    notify: MOTD Changed
+ handlers:
+    - name: MOTD Changed
+      debug:
+        msg: The Motd has changed
   
