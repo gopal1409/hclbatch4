@@ -7,4 +7,13 @@
         name: httpd
         update_cache: yes
         state: latest
-        
+    - name: start the apache service
+      service:
+        name: httpd
+        state: restarted
+      notify: Service Started
+  handlers:
+      - name: Service Started
+        debug:
+          msg: apache service started
+
