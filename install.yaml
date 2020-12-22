@@ -10,10 +10,21 @@
     - name: start the apache service
       service:
         name: httpd
-        state: restarted
-      notify: Service Started
-  handlers:
-      - name: Service Started
-        debug:
-          msg: apache service started
+        enabled: true
+        state: started
+    - name: Install firewalld latest version
+      yum:
+        name: firewalld
+        state: latest
+    - name: start and enable firewalld 
+      service:
+        name: firewalld
+        enabled: true
+        state: started
+    - name: add an http rule in my firewall
+      firewalld:
+        service: http
+        permanent: true
+        state: enabled
+        immediate: yes
 
