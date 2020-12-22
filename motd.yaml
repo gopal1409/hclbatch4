@@ -1,17 +1,24 @@
 ---
-- 
+-
  hosts: db1
  vars:
-  motd_centos: "Welcome to Centos Linux - Ansible Rock-new"
+  motd_centos: "Welcome to Amzon Linux"
   motd_ubuntu: "Welcome to Ubuntu Linux"
  tasks:
-  - name: configure a motd 
+  - name: configure a motd
     copy:
       content: '{{ motd_centos }}'
       dest: /etc/motd
     notify: MOTD Changed
+    when: ansible_distribution ==  "Amazon"
+  - name: configure motd in ubuntu system
+    copy:
+      content: '{{ motd_ubuntu }}'
+      dest: /etc/motd
+    notify: MOTD Changed 
+    when: ansible_distribution ==  "Ubuntu"
  handlers:
     - name: MOTD Changed
       debug:
         msg: The Motd has changed
-  
+
