@@ -2,7 +2,7 @@
 - 
  hosts: db1
  vars:
-  motd_centos: "Welcome to Centos Linux - Ansible Rock"
+  motd_centos: "Welcome to Centos Linux - Ansible Rock-new"
   motd_ubuntu: "Welcome to Ubuntu Linux"
  tasks:
   - name: configure a motd 
