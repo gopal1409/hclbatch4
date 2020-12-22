@@ -1,0 +1,11 @@
+---
+- 
+ hosts: db1
+ vars:
+  motd_centos: "Welcome to Centos Linux - Ansible Rock"
+ tasks:
+  - name: configure a motd 
+    copy:
+      content: "{{ motd_centos }}"
+      dest: /etc/motd
+  
