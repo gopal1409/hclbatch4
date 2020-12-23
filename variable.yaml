@@ -23,19 +23,19 @@
           state: started
       - name: start and enable firewalld
         service:
-          name: "{{ firewall_pkg }}"        
+          name: "{{ firewall_pkg }}"
           enabled: true
           state: started
       - name: create web content
         copy:
-          content: "Welcome to Ansible Autmation Class"
+          content: "Welcome to Ansible Autmation Class\n"
           dest: /var/www/html/index.html
       - name: open the port for {{ rule }}
         firewalld:
-        service: "{{ rule }}"
-        permanent: true
-        immediate: true
-        state: enabled
+          service: "{{ rule }}"
+          permanent: true
+          immediate: true
+          state: enabled
       - name: Define Web Servername
         lineinfile:
           path: /etc/httpd/conf/httpd.conf
@@ -45,3 +45,4 @@
         lineinfile:
           path: /etc/hosts
           line: 34.23.255 wwww.client1.example.com
+
