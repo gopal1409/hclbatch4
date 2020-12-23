@@ -32,7 +32,16 @@
           dest: /var/www/html/index.html
       - name: open the port for {{ rule }}
         firewalld:
-          service: "{{ rule }}"
-          permanent: true
-          immediate: true
-          state: enabled
+        service: "{{ rule }}"
+        permanent: true
+        immediate: true
+        state: enabled
+      - name: Define Web Servername
+        lineinfile:
+          path: /etc/httpd/conf/httpd.conf
+          line: ServerName www.client1.example.com:80
+          insertafter: "#ServerName"
+      - name: Update the entry in hostfile
+        lineinfile:
+          path: /etc/hosts
+          line: 34.23.255 wwww.client1.example.com
