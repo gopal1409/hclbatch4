@@ -20,7 +20,8 @@
         service:
           name: "{{ web_pkg }}"
           enabled: true
-          state: started
+          state: restarted
+        notify: apache restarted
       - name: start and enable firewalld
         service:
           name: "{{ firewall_pkg }}"
@@ -44,10 +45,14 @@
       - name: Update the entry in hostfile
         lineinfile:
           path: /etc/hosts
-          line: {{ansible_default_ipv4.address}} wwww.client1.example.com
+          line: 12.12.12.12 wwww.client1.example.com
       - name: print ansible system variable information
         debug:
           msg: The default address of {{ ansible_fqdn }} is {{ ansible_default_ipv4.address }} is updated with new host file {{ ansible_distribution }}
       - name: shudown centos based system
         command: /sbin/shutdown -t now
         when: ansible_os_family == "CentOS"
+    handlers:
+      - name: apache restarted
+        debug:
+            msg: apache server has been restarted
