@@ -44,7 +44,7 @@
       - name: Update the entry in hostfile
         lineinfile:
           path: /etc/hosts
-          line: 34.23.255 wwww.client1.example.com
+          line: {{ansible_default_ipv4.address}} wwww.client1.example.com
       - name: print ansible system variable information
         debug:
           msg: The default address of {{ ansible_fqdn }} is {{ ansible_default_ipv4.address }} is updated with new host file {{ ansible_distribution }}
