@@ -1,0 +1,19 @@
+---
+# yaml document begin with document seprator
+  - #this minus indicate list of item in python
+    #the target where your play will run
+    hosts: db1
+    vars:
+      web_pkg: httpd
+      firewall_pkg: firewalld
+      perl_pkg: perl
+      rule: http
+    tasks:
+      - name: install packages
+        yum:
+          name:
+            - "{{ web_pkg }}"
+            - "{{ firewall_pkg }}"
+            - "{{ perl_pkg }}"
+          state: state
+        
