@@ -13,4 +13,11 @@
           name: "{{ mail_services }}"   
           state: latest
         with_items: "{{ mail_services }}" 
+      - name: create an user and it to a  group
+        user:
+          name: "{{ item.name }}"
+          state: present
+          groups: "{{ item.groups }}"
+        with_items:
+          - {name: 'jane',groups: 'weblogic'}
       
