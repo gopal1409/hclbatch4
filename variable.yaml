@@ -15,5 +15,5 @@
             - "{{ web_pkg }}"
             - "{{ firewall_pkg }}"
             - "{{ perl_pkg }}"
-          state: state
+          state: latest
         
