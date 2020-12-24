@@ -1,0 +1,22 @@
+---
+# yaml document begin with document seprator
+  - #this minus indicate list of item in python
+    #the target where your play will run
+    hosts: win
+    tasks:
+      - name: run ipconfig
+        raw: ipconfig -all #ansible win -m raw -a "ipconfig"
+        register: myip #it will register your ip
+      - debug: var=myip # show the register value or the ip address
+      - name: Run script
+        script: files/gethost.ps1
+      - name: test stat module
+        win_stat: path="C:\Windows\win.ini"
+        register: stat_file
+      - debug: var=stat_file
+      - name: check stat_file result
+        assert:
+          that:
+            - "stat_file.stat.exists"
+            - "not stat_file.stat.isdir"
+            - "stat_file.stat.size > 0"
