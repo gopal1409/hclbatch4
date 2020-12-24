@@ -8,5 +8,5 @@
         win_chocolatey:
          name:
            - chocolatey
-           - chocolatey-core.extensions
+           - chocolatey-core.extension
          state: present 
