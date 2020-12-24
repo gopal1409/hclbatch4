@@ -10,3 +10,15 @@
            - chocolatey
            - chocolatey-core.extension
          state: present 
+      - name: install git using choco
+        win_chocolatey:
+          name: git
+          state: present
+      - name: install multiple packages
+        win_chocolatey:
+          name: '{{ item }}'
+          state: present
+        loop:
+        - putty
+        - notepadplusplus
+        - winscp         
