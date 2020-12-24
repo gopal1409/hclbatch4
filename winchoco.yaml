@@ -21,4 +21,5 @@
         loop:
         - putty
         - notepadplusplus
-        - winscp         
+        - winscp        
+        - terraform 

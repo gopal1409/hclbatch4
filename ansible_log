@@ -1,0 +1,17 @@
+2020-12-24 17:57:44,542 p=5013 u=root n=ansible | Using /root/devproject/ansible.cfg as config file
+2020-12-24 17:57:44,555 p=5013 u=root n=ansible | [WARNING]: Unable to parse /etc/ansible/roles as an inventory source
+
+2020-12-24 17:57:44,934 p=5013 u=root n=ansible | PLAY [win] ***************************************************************************************************************************
+2020-12-24 17:57:44,942 p=5013 u=root n=ansible | TASK [Gathering Facts] ***************************************************************************************************************
+2020-12-24 17:57:50,485 p=5013 u=root n=ansible | ok: [win]
+2020-12-24 17:57:50,493 p=5013 u=root n=ansible | TASK [Install Chocolatey Package Manager in windows] *********************************************************************************
+2020-12-24 17:57:55,324 p=5013 u=root n=ansible | ok: [win] => {"changed": false, "rc": 0}
+2020-12-24 17:57:55,331 p=5013 u=root n=ansible | TASK [install git using choco] *******************************************************************************************************
+2020-12-24 17:57:59,260 p=5013 u=root n=ansible | ok: [win] => {"changed": false, "rc": 0}
+2020-12-24 17:57:59,266 p=5013 u=root n=ansible | TASK [install multiple packages] *****************************************************************************************************
+2020-12-24 17:58:13,884 p=5013 u=root n=ansible | changed: [win] => (item=putty) => {"ansible_loop_var": "item", "changed": true, "item": "putty", "rc": 0}
+2020-12-24 17:58:27,264 p=5013 u=root n=ansible | changed: [win] => (item=notepadplusplus) => {"ansible_loop_var": "item", "changed": true, "item": "notepadplusplus", "rc": 0}
+2020-12-24 17:58:53,114 p=5013 u=root n=ansible | changed: [win] => (item=winscp) => {"ansible_loop_var": "item", "changed": true, "item": "winscp", "rc": 0}
+2020-12-24 17:59:11,407 p=5013 u=root n=ansible | changed: [win] => (item=terraform) => {"ansible_loop_var": "item", "changed": true, "item": "terraform", "rc": 0}
+2020-12-24 17:59:11,421 p=5013 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-24 17:59:11,421 p=5013 u=root n=ansible | win                        : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
