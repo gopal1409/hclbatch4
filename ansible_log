@@ -42,3 +42,15 @@ https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.
 2020-12-26 14:27:49,445 p=21050 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
 2020-12-26 14:27:49,445 p=21050 u=root n=ansible | db1                        : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2020-12-26 14:28:25,110 p=21082 u=root n=ansible | playbook: tomcat.yaml
+2020-12-26 14:29:43,093 p=21099 u=root n=ansible | playbook: tomcat.yaml
+2020-12-26 14:29:49,820 p=21106 u=root n=ansible | PLAY [db1] ***************************************************************************************************************************
+2020-12-26 14:29:49,828 p=21106 u=root n=ansible | TASK [Gathering Facts] ***************************************************************************************************************
+2020-12-26 14:29:51,774 p=21106 u=root n=ansible | [WARNING]: Platform linux on host db1 is using the discovered Python interpreter at /usr/bin/python, but future installation of
+another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2020-12-26 14:29:51,774 p=21106 u=root n=ansible | ok: [db1]
+2020-12-26 14:29:51,786 p=21106 u=root n=ansible | TASK [update repos] ******************************************************************************************************************
+2020-12-26 14:29:54,165 p=21106 u=root n=ansible | fatal: [db1]: FAILED! => {"changed": false, "msg": "No package matching '.' found available, installed or updated", "rc": 126, "results": ["No package matching '.' found available, installed or updated"]}
+2020-12-26 14:29:54,167 p=21106 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-26 14:29:54,167 p=21106 u=root n=ansible | db1                        : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
