@@ -39,5 +39,5 @@
         firewalld:
           port: 8080/tcp
           permanent: true
-          immedaite: yes
+          immediate: yes
           state: enabled
