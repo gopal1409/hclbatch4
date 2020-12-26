@@ -54,3 +54,44 @@ https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.
 2020-12-26 14:29:54,165 p=21106 u=root n=ansible | fatal: [db1]: FAILED! => {"changed": false, "msg": "No package matching '.' found available, installed or updated", "rc": 126, "results": ["No package matching '.' found available, installed or updated"]}
 2020-12-26 14:29:54,167 p=21106 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
 2020-12-26 14:29:54,167 p=21106 u=root n=ansible | db1                        : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-26 14:31:15,869 p=21164 u=root n=ansible | PLAY [db1] ***************************************************************************************************************************
+2020-12-26 14:31:15,877 p=21164 u=root n=ansible | TASK [Gathering Facts] ***************************************************************************************************************
+2020-12-26 14:31:17,810 p=21164 u=root n=ansible | [WARNING]: Platform linux on host db1 is using the discovered Python interpreter at /usr/bin/python, but future installation of
+another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2020-12-26 14:31:17,810 p=21164 u=root n=ansible | ok: [db1]
+2020-12-26 14:31:17,822 p=21164 u=root n=ansible | TASK [update repos] ******************************************************************************************************************
+2020-12-26 14:31:20,074 p=21164 u=root n=ansible | changed: [db1]
+2020-12-26 14:31:20,088 p=21164 u=root n=ansible | TASK [install java] ******************************************************************************************************************
+2020-12-26 14:31:21,680 p=21164 u=root n=ansible | changed: [db1]
+2020-12-26 14:31:21,683 p=21164 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-26 14:31:21,683 p=21164 u=root n=ansible | db1                        : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-12-26 14:31:32,787 p=21203 u=root n=ansible | PLAY [db1] ***************************************************************************************************************************
+2020-12-26 14:31:32,795 p=21203 u=root n=ansible | TASK [Gathering Facts] ***************************************************************************************************************
+2020-12-26 14:31:34,539 p=21203 u=root n=ansible | [WARNING]: Platform linux on host db1 is using the discovered Python interpreter at /usr/bin/python, but future installation of
+another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2020-12-26 14:31:34,540 p=21203 u=root n=ansible | ok: [db1]
+2020-12-26 14:31:34,552 p=21203 u=root n=ansible | TASK [update repos] ******************************************************************************************************************
+2020-12-26 14:31:59,960 p=21203 u=root n=ansible | changed: [db1]
+2020-12-26 14:31:59,974 p=21203 u=root n=ansible | TASK [install java] ******************************************************************************************************************
+2020-12-26 14:32:19,351 p=21203 u=root n=ansible | changed: [db1]
+2020-12-26 14:32:19,355 p=21203 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-26 14:32:19,355 p=21203 u=root n=ansible | db1                        : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-12-26 14:46:05,740 p=21332 u=root n=ansible | PLAY [db1] ***************************************************************************************************************************
+2020-12-26 14:46:05,748 p=21332 u=root n=ansible | TASK [Gathering Facts] ***************************************************************************************************************
+2020-12-26 14:46:07,727 p=21332 u=root n=ansible | [WARNING]: Platform linux on host db1 is using the discovered Python interpreter at /usr/bin/python, but future installation of
+another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2020-12-26 14:46:07,728 p=21332 u=root n=ansible | ok: [db1]
+2020-12-26 14:46:07,739 p=21332 u=root n=ansible | TASK [update repos] ******************************************************************************************************************
+2020-12-26 14:46:10,083 p=21332 u=root n=ansible | ok: [db1]
+2020-12-26 14:46:10,096 p=21332 u=root n=ansible | TASK [install java] ******************************************************************************************************************
+2020-12-26 14:46:11,048 p=21332 u=root n=ansible | ok: [db1]
+2020-12-26 14:46:11,061 p=21332 u=root n=ansible | TASK [set default path of java] ******************************************************************************************************
+2020-12-26 14:46:11,672 p=21332 u=root n=ansible | changed: [db1]
+2020-12-26 14:46:11,675 p=21332 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-26 14:46:11,675 p=21332 u=root n=ansible | db1                        : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
