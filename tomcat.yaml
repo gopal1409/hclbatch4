@@ -7,7 +7,7 @@
       req_java: java-1.8.0-openjdk
       set_java: jre-1.8.0-openjdk
       req_tomcat_ver: 7.0.107
-      tomcat_url: https://downloads.apache.org/tomcat/tomcat-{{req_tomcat_ver.split('.')[0]}}/v{{req_tomcat_ver}}/bin/apache-tomcat-{{req_tomcat_ver}}.tar.gz
+      tomcat_url: https://downloads.apache.org/tomcat/tomcat-{{req_tomcat_ver}}split('.')[0]}}/v{{req_tomcat_ver}}/bin/apache-tomcat-{{req_tomcat_ver}}.tar.gz
     tasks:
       - name: update repos
         yum:
@@ -24,12 +24,13 @@
           path: /usr/lib/jvm/{{set_java}}/bin/java
       - name: Download required tomcat
         get_url:
-          url: "{{tomcat_url}}"
+          url: "{{ tomcat_url }}"
           dest: /usr/local
       - name: extract the tomcat
         unarchive:
-          src: "/usr/local/apache-tomcat-{{req_tomcat_ver}}.tar.gz"
+          src: "/usr/local/apache-tomcat-{{req_tomcat_ver}}"
           dest: /usr/local
+          remote_src: yes
       - name: rename the tomcat home
         command: mv /usr/local/apache-tomcat-{{req_tomcat_ver}} /usr/local/latest
       - name: start tomcat
