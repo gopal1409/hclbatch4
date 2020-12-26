@@ -195,3 +195,73 @@ https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.
 2020-12-26 15:22:45,379 p=21899 u=root n=ansible | changed: [db1]
 2020-12-26 15:22:45,382 p=21899 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
 2020-12-26 15:22:45,382 p=21899 u=root n=ansible | db1                        : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-12-26 15:32:56,646 p=22021 u=root n=ansible | PLAY [db1] ***************************************************************************************************************************
+2020-12-26 15:32:56,654 p=22021 u=root n=ansible | TASK [Gathering Facts] ***************************************************************************************************************
+2020-12-26 15:32:58,532 p=22021 u=root n=ansible | [WARNING]: Platform linux on host db1 is using the discovered Python interpreter at /usr/bin/python, but future installation of
+another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2020-12-26 15:32:58,532 p=22021 u=root n=ansible | ok: [db1]
+2020-12-26 15:32:58,544 p=22021 u=root n=ansible | TASK [update repos] ******************************************************************************************************************
+2020-12-26 15:33:00,828 p=22021 u=root n=ansible | ok: [db1]
+2020-12-26 15:33:00,841 p=22021 u=root n=ansible | TASK [install java] ******************************************************************************************************************
+2020-12-26 15:33:01,758 p=22021 u=root n=ansible | ok: [db1]
+2020-12-26 15:33:01,771 p=22021 u=root n=ansible | TASK [set default path of java] ******************************************************************************************************
+2020-12-26 15:33:02,334 p=22021 u=root n=ansible | ok: [db1]
+2020-12-26 15:33:02,348 p=22021 u=root n=ansible | TASK [Download required tomcat] ******************************************************************************************************
+2020-12-26 15:33:03,478 p=22021 u=root n=ansible | fatal: [db1]: FAILED! => {"changed": false, "dest": "/usr/local", "elapsed": 0, "gid": 0, "group": "root", "mode": "0755", "msg": "Request failed", "owner": "root", "response": "HTTP Error 404: Not Found", "size": 167, "state": "directory", "status_code": 404, "uid": 0, "url": "https://downloads.apache.org/tomcat/tomcat-7.0.107split('.')[0]}}/v7.0.107/bin/apache-tomcat-7.0.107.tar.gz"}
+2020-12-26 15:33:03,481 p=22021 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-26 15:33:03,481 p=22021 u=root n=ansible | db1                        : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-26 15:33:32,176 p=22080 u=root n=ansible | PLAY [db1] ***************************************************************************************************************************
+2020-12-26 15:33:32,184 p=22080 u=root n=ansible | TASK [Gathering Facts] ***************************************************************************************************************
+2020-12-26 15:33:33,865 p=22080 u=root n=ansible | [WARNING]: Platform linux on host db1 is using the discovered Python interpreter at /usr/bin/python, but future installation of
+another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2020-12-26 15:33:33,865 p=22080 u=root n=ansible | ok: [db1]
+2020-12-26 15:33:33,877 p=22080 u=root n=ansible | TASK [update repos] ******************************************************************************************************************
+2020-12-26 15:33:36,117 p=22080 u=root n=ansible | ok: [db1]
+2020-12-26 15:33:36,130 p=22080 u=root n=ansible | TASK [install java] ******************************************************************************************************************
+2020-12-26 15:33:37,042 p=22080 u=root n=ansible | ok: [db1]
+2020-12-26 15:33:37,055 p=22080 u=root n=ansible | TASK [set default path of java] ******************************************************************************************************
+2020-12-26 15:33:37,617 p=22080 u=root n=ansible | ok: [db1]
+2020-12-26 15:33:37,630 p=22080 u=root n=ansible | TASK [Download required tomcat] ******************************************************************************************************
+2020-12-26 15:33:37,665 p=22080 u=root n=ansible | fatal: [db1]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: https://downloads.apache.org/tomcat/tomcat-{{req_tomcat_versplit('.')[0]}}/v{{req_tomcat_ver}}/bin/apache-tomcat-{{req_tomcat_ver}}.tar.gz: 'req_tomcat_versplit' is undefined\n\nThe error appears to be in '/root/devproject/tomcat.yaml': line 25, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n          path: /usr/lib/jvm/{{set_java}}/bin/java\n      - name: Download required tomcat\n        ^ here\n"}
+2020-12-26 15:33:37,667 p=22080 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-26 15:33:37,667 p=22080 u=root n=ansible | db1                        : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-26 15:35:07,091 p=22133 u=root n=ansible | PLAY [db1] ***************************************************************************************************************************
+2020-12-26 15:35:07,100 p=22133 u=root n=ansible | TASK [Gathering Facts] ***************************************************************************************************************
+2020-12-26 15:35:09,350 p=22133 u=root n=ansible | [WARNING]: Platform linux on host db1 is using the discovered Python interpreter at /usr/bin/python, but future installation of
+another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2020-12-26 15:35:09,350 p=22133 u=root n=ansible | ok: [db1]
+2020-12-26 15:35:09,362 p=22133 u=root n=ansible | TASK [update repos] ******************************************************************************************************************
+2020-12-26 15:35:11,619 p=22133 u=root n=ansible | ok: [db1]
+2020-12-26 15:35:11,632 p=22133 u=root n=ansible | TASK [install java] ******************************************************************************************************************
+2020-12-26 15:35:12,546 p=22133 u=root n=ansible | ok: [db1]
+2020-12-26 15:35:12,559 p=22133 u=root n=ansible | TASK [set default path of java] ******************************************************************************************************
+2020-12-26 15:35:13,109 p=22133 u=root n=ansible | ok: [db1]
+2020-12-26 15:35:13,123 p=22133 u=root n=ansible | TASK [Download required tomcat] ******************************************************************************************************
+2020-12-26 15:35:13,160 p=22133 u=root n=ansible | fatal: [db1]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: https://downloads.apache.org/tomcat/tomcat-{{req_tomcat_versplit('.')[0]}}/v{{req_tomcat_ver}}/bin/apache-tomcat-{{req_tomcat_ver}}.tar.gz: 'req_tomcat_versplit' is undefined\n\nThe error appears to be in '/root/devproject/tomcat.yaml': line 25, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n          path: /usr/lib/jvm/{{set_java}}/bin/java\n      - name: Download required tomcat\n        ^ here\n"}
+2020-12-26 15:35:13,163 p=22133 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-26 15:35:13,163 p=22133 u=root n=ansible | db1                        : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-26 15:36:55,902 p=22232 u=root n=ansible | PLAY [db1] ***************************************************************************************************************************
+2020-12-26 15:36:55,910 p=22232 u=root n=ansible | TASK [Gathering Facts] ***************************************************************************************************************
+2020-12-26 15:36:57,792 p=22232 u=root n=ansible | [WARNING]: Platform linux on host db1 is using the discovered Python interpreter at /usr/bin/python, but future installation of
+another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2020-12-26 15:36:57,793 p=22232 u=root n=ansible | ok: [db1]
+2020-12-26 15:36:57,804 p=22232 u=root n=ansible | TASK [update repos] ******************************************************************************************************************
+2020-12-26 15:37:00,088 p=22232 u=root n=ansible | ok: [db1]
+2020-12-26 15:37:00,105 p=22232 u=root n=ansible | TASK [install java] ******************************************************************************************************************
+2020-12-26 15:37:01,022 p=22232 u=root n=ansible | ok: [db1]
+2020-12-26 15:37:01,035 p=22232 u=root n=ansible | TASK [set default path of java] ******************************************************************************************************
+2020-12-26 15:37:01,594 p=22232 u=root n=ansible | ok: [db1]
+2020-12-26 15:37:01,607 p=22232 u=root n=ansible | TASK [Download required tomcat] ******************************************************************************************************
+2020-12-26 15:37:02,709 p=22232 u=root n=ansible | changed: [db1]
+2020-12-26 15:37:02,723 p=22232 u=root n=ansible | TASK [extract the tomcat] ************************************************************************************************************
+2020-12-26 15:37:02,828 p=22232 u=root n=ansible | fatal: [db1]: FAILED! => {"changed": false, "msg": "Could not find or access '/usr/local/apache-tomcat-7.0.107.tar.gz' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2020-12-26 15:37:02,830 p=22232 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-26 15:37:02,830 p=22232 u=root n=ansible | db1                        : ok=5    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
