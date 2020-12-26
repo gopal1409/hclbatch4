@@ -95,3 +95,18 @@ https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.
 2020-12-26 14:46:11,672 p=21332 u=root n=ansible | changed: [db1]
 2020-12-26 14:46:11,675 p=21332 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
 2020-12-26 14:46:11,675 p=21332 u=root n=ansible | db1                        : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-12-26 14:56:56,298 p=21439 u=root n=ansible | PLAY [db1] ***************************************************************************************************************************
+2020-12-26 14:56:56,307 p=21439 u=root n=ansible | TASK [Gathering Facts] ***************************************************************************************************************
+2020-12-26 14:56:58,188 p=21439 u=root n=ansible | [WARNING]: Platform linux on host db1 is using the discovered Python interpreter at /usr/bin/python, but future installation of
+another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2020-12-26 14:56:58,188 p=21439 u=root n=ansible | ok: [db1]
+2020-12-26 14:56:58,200 p=21439 u=root n=ansible | TASK [update repos] ******************************************************************************************************************
+2020-12-26 14:57:00,558 p=21439 u=root n=ansible | ok: [db1]
+2020-12-26 14:57:00,571 p=21439 u=root n=ansible | TASK [install java] ******************************************************************************************************************
+2020-12-26 14:57:01,534 p=21439 u=root n=ansible | ok: [db1]
+2020-12-26 14:57:01,547 p=21439 u=root n=ansible | TASK [set default path of java] ******************************************************************************************************
+2020-12-26 14:57:02,102 p=21439 u=root n=ansible | ok: [db1]
+2020-12-26 14:57:02,106 p=21439 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-26 14:57:02,106 p=21439 u=root n=ansible | db1                        : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
