@@ -36,5 +36,5 @@
   shell: uname -r
   register: new_ker
 - debug:
-    msg: "new kernal version is {{ new_ker.stdout }} and old kernal version is {{ curr_ker }}"
+    msg: "new kernal version is {{ new_ker.stdout }} and old kernal version is {{ curr_ker.stdout }}"
   
