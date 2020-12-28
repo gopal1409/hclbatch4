@@ -919,3 +919,110 @@ https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.
 }
 2020-12-28 16:12:36,674 p=7995 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
 2020-12-28 16:12:36,674 p=7995 u=root n=ansible | db1                        : ok=12   changed=5    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2020-12-28 16:15:46,895 p=8106 u=root n=ansible | PLAY [db1] ***************************************************************************************************************************
+2020-12-28 16:15:46,906 p=8106 u=root n=ansible | TASK [Gathering Facts] ***************************************************************************************************************
+2020-12-28 16:15:48,867 p=8106 u=root n=ansible | [WARNING]: Platform linux on host db1 is using the discovered Python interpreter at /usr/bin/python, but future installation of
+another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2020-12-28 16:15:48,867 p=8106 u=root n=ansible | ok: [db1]
+2020-12-28 16:15:48,879 p=8106 u=root n=ansible | TASK [patch : verify app/Database are running or not] ********************************************************************************
+2020-12-28 16:15:49,427 p=8106 u=root n=ansible | changed: [db1]
+2020-12-28 16:15:49,440 p=8106 u=root n=ansible | TASK [patch : debug] *****************************************************************************************************************
+2020-12-28 16:15:49,477 p=8106 u=root n=ansible | ok: [db1] => {
+    "msg": "process_not_running"
+}
+2020-12-28 16:15:49,489 p=8106 u=root n=ansible | TASK [Decision point to start patching] **********************************************************************************************
+2020-12-28 16:15:49,526 p=8106 u=root n=ansible | skipping: [db1]
+2020-12-28 16:15:49,538 p=8106 u=root n=ansible | TASK [patch : current kernel version] ************************************************************************************************
+2020-12-28 16:15:49,905 p=8106 u=root n=ansible | changed: [db1]
+2020-12-28 16:15:49,918 p=8106 u=root n=ansible | TASK [intializing patching] **********************************************************************************************************
+2020-12-28 16:15:59,631 p=8106 u=root n=ansible | ok: [db1]
+2020-12-28 16:15:59,645 p=8106 u=root n=ansible | TASK [patch : debug] *****************************************************************************************************************
+2020-12-28 16:15:59,683 p=8106 u=root n=ansible | ok: [db1] => {
+    "msg": "kernal has been updated"
+}
+2020-12-28 16:15:59,696 p=8106 u=root n=ansible | TASK [patch : check if reboot is required or not] ************************************************************************************
+2020-12-28 16:16:00,439 p=8106 u=root n=ansible | changed: [db1]
+2020-12-28 16:16:00,452 p=8106 u=root n=ansible | TASK [patch : debug] *****************************************************************************************************************
+2020-12-28 16:16:00,489 p=8106 u=root n=ansible | ok: [db1] => {
+    "msg": "reboot not required"
+}
+2020-12-28 16:16:00,502 p=8106 u=root n=ansible | TASK [reboot after patching] *********************************************************************************************************
+2020-12-28 16:16:01,214 p=8106 u=root n=ansible | changed: [db1]
+2020-12-28 16:16:01,228 p=8106 u=root n=ansible | TASK [patch : wait the system to come up] ********************************************************************************************
+2020-12-28 16:16:01,241 p=8180 u=root n=ansible | Pausing for 60 seconds
+2020-12-28 16:16:01,242 p=8180 u=root n=ansible | (ctrl+C then 'C' = continue early, ctrl+C then 'A' = abort)
+2020-12-28 16:16:12,447 p=8180 u=root n=ansible | Press 'C' to continue the play or 'A' to abort 
+2020-12-28 16:16:15,230 p=8106 u=root n=ansible | ok: [db1]
+2020-12-28 16:16:15,242 p=8106 u=root n=ansible | TASK [patch : New kernal version] ****************************************************************************************************
+2020-12-28 16:16:15,609 p=8106 u=root n=ansible | changed: [db1]
+2020-12-28 16:16:15,622 p=8106 u=root n=ansible | TASK [patch : debug] *****************************************************************************************************************
+2020-12-28 16:16:15,659 p=8106 u=root n=ansible | ok: [db1] => {
+    "msg": "new kernal version is 4.14.203-156.332.amzn2.x86_64 and old kernal version is 4.14.203-156.332.amzn2.x86_64"
+}
+2020-12-28 16:16:15,662 p=8106 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-28 16:16:15,662 p=8106 u=root n=ansible | db1                        : ok=12   changed=5    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2020-12-28 16:17:33,163 p=8230 u=root n=ansible | PLAY [db1] ***************************************************************************************************************************
+2020-12-28 16:17:33,175 p=8230 u=root n=ansible | TASK [Gathering Facts] ***************************************************************************************************************
+2020-12-28 16:17:35,142 p=8230 u=root n=ansible | [WARNING]: Platform linux on host db1 is using the discovered Python interpreter at /usr/bin/python, but future installation of
+another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2020-12-28 16:17:35,142 p=8230 u=root n=ansible | ok: [db1]
+2020-12-28 16:17:35,154 p=8230 u=root n=ansible | TASK [patch : verify app/Database are running or not] ********************************************************************************
+2020-12-28 16:17:35,716 p=8230 u=root n=ansible | changed: [db1]
+2020-12-28 16:17:35,730 p=8230 u=root n=ansible | TASK [patch : debug] *****************************************************************************************************************
+2020-12-28 16:17:35,768 p=8230 u=root n=ansible | ok: [db1] => {
+    "msg": "process_not_running"
+}
+2020-12-28 16:17:35,781 p=8230 u=root n=ansible | TASK [Decision point to start patching] **********************************************************************************************
+2020-12-28 16:17:35,816 p=8230 u=root n=ansible | skipping: [db1]
+2020-12-28 16:17:35,829 p=8230 u=root n=ansible | TASK [patch : current kernel version] ************************************************************************************************
+2020-12-28 16:17:36,202 p=8230 u=root n=ansible | changed: [db1]
+2020-12-28 16:17:36,216 p=8230 u=root n=ansible | TASK [intializing patching] **********************************************************************************************************
+2020-12-28 16:17:46,024 p=8230 u=root n=ansible | ok: [db1]
+2020-12-28 16:17:46,038 p=8230 u=root n=ansible | TASK [patch : debug] *****************************************************************************************************************
+2020-12-28 16:17:46,078 p=8230 u=root n=ansible | ok: [db1] => {
+    "msg": "kernal has been updated"
+}
+2020-12-28 16:17:46,091 p=8230 u=root n=ansible | TASK [patch : check if reboot is required or not] ************************************************************************************
+2020-12-28 16:17:46,836 p=8230 u=root n=ansible | changed: [db1]
+2020-12-28 16:17:46,849 p=8230 u=root n=ansible | TASK [patch : debug] *****************************************************************************************************************
+2020-12-28 16:17:46,886 p=8230 u=root n=ansible | ok: [db1] => {
+    "msg": "reboot not required"
+}
+2020-12-28 16:17:46,899 p=8230 u=root n=ansible | TASK [reboot after patching] *********************************************************************************************************
+2020-12-28 16:17:47,626 p=8230 u=root n=ansible | changed: [db1]
+2020-12-28 16:17:47,640 p=8230 u=root n=ansible | TASK [patch : wait the system to come up] ********************************************************************************************
+2020-12-28 16:17:47,653 p=8305 u=root n=ansible | Pausing for 60 seconds
+2020-12-28 16:17:47,653 p=8305 u=root n=ansible | (ctrl+C then 'C' = continue early, ctrl+C then 'A' = abort)
+2020-12-28 16:17:51,468 p=8305 u=root n=ansible | Press 'C' to continue the play or 'A' to abort 
+2020-12-28 16:17:52,984 p=8230 u=root n=ansible | ok: [db1]
+2020-12-28 16:17:52,997 p=8230 u=root n=ansible | TASK [patch : New kernal version] ****************************************************************************************************
+2020-12-28 16:17:53,369 p=8230 u=root n=ansible | changed: [db1]
+2020-12-28 16:17:53,382 p=8230 u=root n=ansible | TASK [patch : debug] *****************************************************************************************************************
+2020-12-28 16:17:53,420 p=8230 u=root n=ansible | ok: [db1] => {
+    "msg": "new kernal version is 4.14.203-156.332.amzn2.x86_64 and old kernal version is 4.14.203-156.332.amzn2.x86_64"
+}
+2020-12-28 16:17:53,432 p=8230 u=root n=ansible | TASK [apache : start and enable httpd service] ***************************************************************************************
+2020-12-28 16:17:54,467 p=8230 u=root n=ansible | changed: [db1]
+2020-12-28 16:17:54,471 p=8230 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-28 16:17:54,471 p=8230 u=root n=ansible | db1                        : ok=13   changed=6    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2020-12-28 16:17:59,824 p=8328 u=root n=ansible | PLAY [db1] ***************************************************************************************************************************
+2020-12-28 16:17:59,836 p=8328 u=root n=ansible | TASK [Gathering Facts] ***************************************************************************************************************
+2020-12-28 16:18:01,602 p=8328 u=root n=ansible | [WARNING]: Platform linux on host db1 is using the discovered Python interpreter at /usr/bin/python, but future installation of
+another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2020-12-28 16:18:01,602 p=8328 u=root n=ansible | ok: [db1]
+2020-12-28 16:18:01,614 p=8328 u=root n=ansible | TASK [patch : verify app/Database are running or not] ********************************************************************************
+2020-12-28 16:18:02,178 p=8328 u=root n=ansible | changed: [db1]
+2020-12-28 16:18:02,192 p=8328 u=root n=ansible | TASK [patch : debug] *****************************************************************************************************************
+2020-12-28 16:18:02,230 p=8328 u=root n=ansible | ok: [db1] => {
+    "msg": "process_running"
+}
+2020-12-28 16:18:02,242 p=8328 u=root n=ansible | TASK [Decision point to start patching] **********************************************************************************************
+2020-12-28 16:18:02,282 p=8328 u=root n=ansible | fatal: [db1]: FAILED! => {"changed": false, "msg": "db1 having running application please stop first then attempy patching"}
+2020-12-28 16:18:02,284 p=8328 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-28 16:18:02,284 p=8328 u=root n=ansible | db1                        : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
