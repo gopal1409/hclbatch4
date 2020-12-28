@@ -674,3 +674,46 @@ https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.
 2020-12-26 17:33:16,771 p=24357 u=root n=ansible | changed: [db1]
 2020-12-26 17:33:16,775 p=24357 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
 2020-12-26 17:33:16,775 p=24357 u=root n=ansible | db1                        : ok=10   changed=4    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2020-12-28 14:30:20,572 p=6555 u=root n=ansible | - Role apache was created successfully
+2020-12-28 14:48:20,071 p=6836 u=root n=ansible | [WARNING]: While constructing a mapping from /root/devproject/apache/tasks/main.yml, line 3, column 1, found a duplicate dict key
+(import_tasks). Using last defined value only.
+
+2020-12-28 14:48:20,072 p=6836 u=root n=ansible | ERROR! The tasks/main.yml file for role 'apache' must contain a list of tasks
+
+The error appears to be in '/root/devproject/apache/tasks/main.yml': line 3, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+# tasks file for apache
+import_tasks: install.yaml
+^ here
+
+2020-12-28 14:48:58,694 p=6851 u=root n=ansible | ERROR! couldn't resolve module/action 'services'. This often indicates a misspelling, missing collection, or incorrect module path.
+
+The error appears to be in '/root/devproject/apache/handlers/main.yml': line 3, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+# handlers file for apache
+- name: restart apache
+  ^ here
+
+2020-12-28 14:49:33,530 p=6873 u=root n=ansible | PLAY [db1] ***************************************************************************************************************************
+2020-12-28 14:49:33,541 p=6873 u=root n=ansible | TASK [Gathering Facts] ***************************************************************************************************************
+2020-12-28 14:49:35,540 p=6873 u=root n=ansible | [WARNING]: Platform linux on host db1 is using the discovered Python interpreter at /usr/bin/python, but future installation of
+another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2020-12-28 14:49:35,540 p=6873 u=root n=ansible | ok: [db1]
+2020-12-28 14:49:35,552 p=6873 u=root n=ansible | TASK [install apache] ****************************************************************************************************************
+2020-12-28 14:49:37,994 p=6873 u=root n=ansible | ok: [db1]
+2020-12-28 14:49:38,009 p=6873 u=root n=ansible | TASK [apache : copy my index.html] ***************************************************************************************************
+2020-12-28 14:49:39,354 p=6873 u=root n=ansible | changed: [db1]
+2020-12-28 14:49:39,367 p=6873 u=root n=ansible | TASK [apache : start and enable httpd service] ***************************************************************************************
+2020-12-28 14:49:40,448 p=6873 u=root n=ansible | changed: [db1]
+2020-12-28 14:49:40,449 p=6873 u=root n=ansible | RUNNING HANDLER [restart apache] *****************************************************************************************************
+2020-12-28 14:49:42,048 p=6873 u=root n=ansible | changed: [db1]
+2020-12-28 14:49:42,051 p=6873 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-28 14:49:42,052 p=6873 u=root n=ansible | db1                        : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
