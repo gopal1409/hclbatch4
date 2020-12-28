@@ -1,0 +1,23 @@
+---
+      - name: update repos
+        yum:
+          name: "*"
+          state: latest
+      - name: install firewalld
+        yum:
+          name: firewalld
+          state: latest
+      - name: start firewalld service
+        service:
+          name: firewalld
+          state: started
+      - name: install java
+        yum:
+          name: "{{ req_java }}"
+          state: present
+      - name: set default path of java
+        alternatives:
+          name: java
+          link: /usr/bin/java
+          path: /usr/lib/jvm/{{set_java}}/bin/java
+      

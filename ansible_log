@@ -1243,3 +1243,86 @@ https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.
 2020-12-28 16:41:30,945 p=3693 u=root n=ansible | fatal: [db1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host db1 port 22: Connection refused", "unreachable": true}
 2020-12-28 16:41:30,947 p=3693 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
 2020-12-28 16:41:30,947 p=3693 u=root n=ansible | db1                        : ok=10   changed=4    unreachable=1    failed=0    skipped=1    rescued=0    ignored=0   
+2020-12-28 17:20:44,619 p=4037 u=root n=ansible | - downloading role 'mysql', owned by geerlinggguy
+2020-12-28 17:20:44,948 p=4037 u=root n=ansible | [WARNING]: - geerlinggguy.mysql was NOT installed successfully: - sorry, geerlinggguy.mysql was not found on
+https://galaxy.ansible.com/api/.
+
+2020-12-28 17:20:44,948 p=4037 u=root n=ansible | ERROR! - you can use --ignore-errors to skip failed roles and finish processing the list.
+2020-12-28 17:21:01,067 p=4043 u=root n=ansible | - downloading role 'mysql', owned by geerlingguy
+2020-12-28 17:21:02,493 p=4043 u=root n=ansible | - downloading role from https://github.com/geerlingguy/ansible-role-mysql/archive/3.3.0.tar.gz
+2020-12-28 17:21:02,707 p=4043 u=root n=ansible | - extracting geerlingguy.mysql to /root/.ansible/roles/geerlingguy.mysql
+2020-12-28 17:21:02,715 p=4043 u=root n=ansible | - geerlingguy.mysql (3.3.0) was installed successfully
+2020-12-28 17:21:52,176 p=4059 u=root n=ansible | - Role tomcat was created successfully
+2020-12-28 17:25:18,843 p=4201 u=root n=ansible | ERROR! failed to combine variables, expected dicts but got a 'dict' and a 'AnsibleSequence': 
+{}
+[{"req_java": "java-1.8.0-openjdk"}, {"set_java": "jre-1.8.0-openjdk"}, {"req_tomcat_ver": "7.0.107"}, {"tomcat_url": "https://downloads.apache.org/tomcat/tomcat-{{req_tomcat_ver.split('.')[0]}}/v{{req_tomcat_ver}}/bin/apache-tomcat-{{req_tomcat_ver}}.tar.gz"}, {"tomcat_port": 8090}]
+2020-12-28 17:26:36,920 p=4208 u=root n=ansible | PLAY [db1] ***************************************************************************************************************************
+2020-12-28 17:26:36,932 p=4208 u=root n=ansible | TASK [Gathering Facts] ***************************************************************************************************************
+2020-12-28 17:26:39,009 p=4208 u=root n=ansible | [WARNING]: Platform linux on host db1 is using the discovered Python interpreter at /usr/bin/python, but future installation of
+another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2020-12-28 17:26:39,009 p=4208 u=root n=ansible | ok: [db1]
+2020-12-28 17:26:39,022 p=4208 u=root n=ansible | TASK [tomcat : update repos] *********************************************************************************************************
+2020-12-28 17:30:45,920 p=4308 u=root n=ansible | [WARNING]: While constructing a mapping from /root/devproject/tomcat/tasks/main.yml, line 3, column 1, found a duplicate dict key
+(include_task). Using last defined value only.
+
+2020-12-28 17:30:45,921 p=4308 u=root n=ansible | ERROR! The tasks/main.yml file for role 'tomcat' must contain a list of tasks
+
+The error appears to be in '/root/devproject/tomcat/tasks/main.yml': line 3, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+# tasks file for tomcat
+include_task: java.yaml
+^ here
+
+2020-12-28 17:31:08,606 p=4314 u=root n=ansible | ERROR! this task 'include_task' has extra params, which is only allowed in the following modules: shell, win_shell, include_vars, add_host, raw, include_role, meta, set_fact, include, import_tasks, script, import_role, include_tasks, group_by, command, win_command
+
+The error appears to be in '/root/devproject/tomcat/tasks/main.yml': line 3, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+# tasks file for tomcat
+- include_task: java.yaml
+  ^ here
+
+2020-12-28 17:32:53,911 p=4337 u=root n=ansible | PLAY [db1] ***************************************************************************************************************************
+2020-12-28 17:32:53,924 p=4337 u=root n=ansible | TASK [Gathering Facts] ***************************************************************************************************************
+2020-12-28 17:32:55,982 p=4337 u=root n=ansible | [WARNING]: Platform linux on host db1 is using the discovered Python interpreter at /usr/bin/python, but future installation of
+another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2020-12-28 17:32:55,982 p=4337 u=root n=ansible | ok: [db1]
+2020-12-28 17:32:55,994 p=4337 u=root n=ansible | TASK [tomcat : include_tasks] ********************************************************************************************************
+2020-12-28 17:32:56,077 p=4337 u=root n=ansible | included: /root/devproject/tomcat/tasks/java.yaml for db1
+2020-12-28 17:32:56,091 p=4337 u=root n=ansible | TASK [tomcat : update repos] *********************************************************************************************************
+2020-12-28 17:32:58,450 p=4337 u=root n=ansible | ok: [db1]
+2020-12-28 17:32:58,463 p=4337 u=root n=ansible | TASK [tomcat : install firewalld] ****************************************************************************************************
+2020-12-28 17:33:00,544 p=4337 u=root n=ansible | ok: [db1]
+2020-12-28 17:33:00,557 p=4337 u=root n=ansible | TASK [tomcat : start firewalld service] **********************************************************************************************
+2020-12-28 17:33:01,420 p=4337 u=root n=ansible | ok: [db1]
+2020-12-28 17:33:01,434 p=4337 u=root n=ansible | TASK [tomcat : install java] *********************************************************************************************************
+2020-12-28 17:33:02,418 p=4337 u=root n=ansible | ok: [db1]
+2020-12-28 17:33:02,431 p=4337 u=root n=ansible | TASK [tomcat : set default path of java] *********************************************************************************************
+2020-12-28 17:33:03,006 p=4337 u=root n=ansible | ok: [db1]
+2020-12-28 17:33:03,019 p=4337 u=root n=ansible | TASK [tomcat : include_tasks] ********************************************************************************************************
+2020-12-28 17:33:03,085 p=4337 u=root n=ansible | included: /root/devproject/tomcat/tasks/tomcat.yaml for db1
+2020-12-28 17:33:03,099 p=4337 u=root n=ansible | TASK [Download required tomcat] ******************************************************************************************************
+2020-12-28 17:33:05,771 p=4337 u=root n=ansible | ok: [db1]
+2020-12-28 17:33:05,784 p=4337 u=root n=ansible | TASK [tomcat : remove folder] ********************************************************************************************************
+2020-12-28 17:33:06,419 p=4337 u=root n=ansible | changed: [db1]
+2020-12-28 17:33:06,432 p=4337 u=root n=ansible | TASK [extract the tomcat] ************************************************************************************************************
+2020-12-28 17:33:08,240 p=4337 u=root n=ansible | changed: [db1]
+2020-12-28 17:33:08,254 p=4337 u=root n=ansible | TASK [rename the tomcat home] ********************************************************************************************************
+2020-12-28 17:33:08,818 p=4337 u=root n=ansible | changed: [db1]
+2020-12-28 17:33:08,832 p=4337 u=root n=ansible | TASK [tomcat : replace default port with required port] ******************************************************************************
+2020-12-28 17:33:09,714 p=4337 u=root n=ansible | changed: [db1]
+2020-12-28 17:33:09,728 p=4337 u=root n=ansible | TASK [start tomcat] ******************************************************************************************************************
+2020-12-28 17:33:10,075 p=4337 u=root n=ansible | changed: [db1]
+2020-12-28 17:33:10,088 p=4337 u=root n=ansible | TASK [tomcat : open port] ************************************************************************************************************
+2020-12-28 17:33:11,465 p=4337 u=root n=ansible | changed: [db1]
+2020-12-28 17:33:11,468 p=4337 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-28 17:33:11,469 p=4337 u=root n=ansible | db1                        : ok=15   changed=6    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

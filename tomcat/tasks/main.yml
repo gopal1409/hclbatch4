@@ -1,0 +1,4 @@
+---
+# tasks file for tomcat
+- include_tasks: java.yaml
+- include_tasks: tomcat.yaml
