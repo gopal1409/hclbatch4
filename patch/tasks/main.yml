@@ -6,4 +6,8 @@
   register: app_proc_check
 - debug: 
     msg: "{{ app_proc_check.stdout }}"
+- name: Decision point to start patching
+  fail:
+    msg: "{{ inventory_hostname }} having running application please stop first then attempy patching"
+  when: app_proc_check.stdout == "process_running"
 
