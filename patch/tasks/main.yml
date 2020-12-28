@@ -10,4 +10,13 @@
   fail:
     msg: "{{ inventory_hostname }} having running application please stop first then attempy patching"
   when: app_proc_check.stdout == "process_running"
-
+- name: current kernel version
+  shell: uname -r
+  register: curr_ker
+- name: intializing patching
+  yum:
+    name: kernel
+    state: latest
+  register: yum_update
+- debug: msg="kernal has been updated"
+  when: yum_update.rc == 0

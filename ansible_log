@@ -796,3 +796,37 @@ https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.
 2020-12-28 15:20:33,675 p=7423 u=root n=ansible | fatal: [db1]: FAILED! => {"changed": false, "msg": "db1 having running application please stop first then attempy patching"}
 2020-12-28 15:20:33,676 p=7423 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
 2020-12-28 15:20:33,677 p=7423 u=root n=ansible | db1                        : ok=6    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-28 15:28:10,684 p=7517 u=root n=ansible | ERROR! 'shell' is not a valid attribute for a Play
+
+The error appears to be in '/root/devproject/patch/tasks/main.yml': line 3, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+# tasks file for patch
+- name: verify app/Database are running or not
+  ^ here
+
+2020-12-28 15:28:31,322 p=7522 u=root n=ansible | PLAY [db1] ***************************************************************************************************************************
+2020-12-28 15:28:31,334 p=7522 u=root n=ansible | TASK [Gathering Facts] ***************************************************************************************************************
+2020-12-28 15:28:33,292 p=7522 u=root n=ansible | [WARNING]: Platform linux on host db1 is using the discovered Python interpreter at /usr/bin/python, but future installation of
+another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+2020-12-28 15:28:33,292 p=7522 u=root n=ansible | ok: [db1]
+2020-12-28 15:28:33,305 p=7522 u=root n=ansible | TASK [install apache] ****************************************************************************************************************
+2020-12-28 15:28:35,718 p=7522 u=root n=ansible | ok: [db1]
+2020-12-28 15:28:35,731 p=7522 u=root n=ansible | TASK [apache : copy my index.html] ***************************************************************************************************
+2020-12-28 15:28:37,026 p=7522 u=root n=ansible | ok: [db1]
+2020-12-28 15:28:37,040 p=7522 u=root n=ansible | TASK [apache : start and enable httpd service] ***************************************************************************************
+2020-12-28 15:28:39,089 p=7522 u=root n=ansible | changed: [db1]
+2020-12-28 15:28:39,103 p=7522 u=root n=ansible | TASK [patch : verify app/Database are running or not] ********************************************************************************
+2020-12-28 15:28:39,705 p=7522 u=root n=ansible | changed: [db1]
+2020-12-28 15:28:39,719 p=7522 u=root n=ansible | TASK [patch : debug] *****************************************************************************************************************
+2020-12-28 15:28:39,758 p=7522 u=root n=ansible | ok: [db1] => {
+    "msg": "process_running"
+}
+2020-12-28 15:28:39,771 p=7522 u=root n=ansible | TASK [Decision point to start patching] **********************************************************************************************
+2020-12-28 15:28:39,812 p=7522 u=root n=ansible | fatal: [db1]: FAILED! => {"changed": false, "msg": "db1 having running application please stop first then attempy patching"}
+2020-12-28 15:28:39,814 p=7522 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-28 15:28:39,814 p=7522 u=root n=ansible | db1                        : ok=6    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
