@@ -1,0 +1,885 @@
+    1  hostnamectl set-hostname --static ansiblemaster
+    2  exit
+    3  ssh-keygen -t rsa
+    4  cat /root/.ssh/id_rsa.pub 
+    5  vi /etc/hosts
+    6  ssh root@db1
+    7  vi /root/.ssh/authorized_keys 
+    8  cat /root/.ssh/id_rsa.pub 
+    9  ssh root@db1
+   10  cat /etc/hosts
+   11  cat /root/.ssh/id_rsa.pub 
+   12  ssh-copy-id root@db1
+   13  ssh root@db1
+   14  ssh ec2-user@db1
+   15  vi /root/.ssh/authorized_keys 
+   16  clear
+   17  cat /etc/hosts
+   18  ssh root@db1
+   19  cat /root/.ssh/id_rsa.pub 
+   20  vi /etc/hosts
+   21  ssh root@db1
+   22  vi /etc/hosts
+   23  ssh root@db2
+   24  cat /root/.ssh/id_rsa.pub 
+   25  ssh root@db2
+   26  yum install epel-release
+   27  sudo amazon-linux-extras install epel
+   28  yum install ansible
+   29  ansible --version
+   30  history
+   31  ansible --version
+   32  ansible all -m shell "free -m"
+   33  ansible all -m shell -a "free -m"
+   34  ansible db1 -m group -a "name=weblogics state=present"
+   35  ansible db1 -m user -a "name=weblogic group=weblogic creaetehome=yes"
+   36  ansible db1 -m user -a "name=weblogic group=weblogic createhome=yes"
+   37  ansible db1 -m user -a "name=weblogics group=weblogic createhome=yes"
+   38  ansible db1 -m group -a "name=weblogic state=present"
+   39  historu
+   40  history
+   41  ansible db1 -m group -a "name=weblogic state=present"
+   42  ansible db1 -m group -a "name=gopal state=present"
+   43  ansible all -m file -a "path=/tmp/x state=director1 mode=0755"
+   44  ansible all -m file -a "path=/tmp/x state=directory mode=0755"
+   45  ansible all -m file -a "path=/tmp/y state=touch mode=0755"
+   46  ssh root@db1
+   47  ansible all -m file -a "path=/tmp/y group=weblogic owner=weblogic"
+   48  ssh root@db1
+   49  history
+   50  ansible db1,db2 -m ping
+   51  ansible db1 -m yum -a "name=httpd state=installed"
+   52  ansible db1 -m service -a "name=httpd state=stop enabled=yes"
+   53  ansible db1 -m service -a "name=httpd state=started enabled=yes"
+   54  ssh root@db1
+   55  history
+   56  ansible db1 -m yum -a "name=httpd state=absent"
+   57  history
+   58  history > ansibleadhocday1.txt
+   59  ansible --version
+   60  cd /root/.ansible/plugins
+   61  cd /root/.ansible/
+   62  ls
+   63  ls -la
+   64  cd cp/
+   65  cd /usr/share/ansible/plugins/
+   66  ls
+   67  cd module
+   68  cd modules/
+   69  ls
+   70  ls -la
+   71  pwd
+   72  cd /usr/lib/python2.7/site-packages/
+   73  ls
+   74  cd ansible
+   75  ls
+   76  cd module
+   77  cd modules
+   78  ls
+   79  cd files/
+   80  ls
+   81  cat /root/.ssh/id_rsa.pub 
+   82  ansible all -m ping
+   83  vi /etc/hosts
+   84  ansible all -m ping
+   85  vi /etc/ansible/hosts
+   86  history
+   87  ansible all -m ping
+   88  ssh root@db1
+   89  vi /etc/hosts
+   90  ssh root@db1
+   91  vi /root/.ssh/known_hosts 
+   92  ssh root@db1
+   93  ansible all -m ping
+   94  python --version
+   95  yum update
+   96  ansible all -m ping
+   97  ping db1
+   98  ansible --version
+   99  ansible all -m command -a uptime
+  100  ansible all -m shell -a uptime
+  101  ansible all -m shell -a "df -h"
+  102  ansible all -m shell -a "free"
+  103  history
+  104  26  ansible all -m command -a uptime
+  105     27  ansible all -m shell -a uptime
+  106     28  ansible all -m shell -a "df -h"
+  107  ssh root@db1
+  108  cd /root
+  109  ls
+  110  vi devproject/
+  111  cd devproject/
+  112  ls
+  113  vi install.yaml 
+  114  ansible-playbook install.yaml 
+  115  vi install.yaml 
+  116  ansible-playbook install.yaml 
+  117  vi install.yaml 
+  118  ansible-playbook install.yaml 
+  119  vi install.yaml 
+  120  ansible-playbook install.yaml 
+  121  vi install.yaml 
+  122  ansible-playbook install.yaml 
+  123  vi install.yaml 
+  124  git add .
+  125  git commit -m "service"
+  126  git push -u origin master
+  127  ansible-playbook --syntax-check motd.yaml 
+  128  ansible-playbook --syntax-check install.yaml 
+  129  ansible-playbook --step install.yaml 
+  130  history
+  131  vi install.yaml 
+  132  ansible-playbook install.yaml 
+  133  vi install.yaml 
+  134  ansible-playbook install.yaml 
+  135  vi install.yaml 
+  136  ansible-playbook install.yaml 
+  137  vi install.yaml 
+  138  git add .
+  139  git commit -m "with firewalld"
+  140  git push -u origin master
+  141  ansible-playbook install.yaml --vv
+  142  ansible-playbook install.yaml -v
+  143  ls
+  144  cat ansibleadhocday1.txt 
+  145  cd /etc/ansible/
+  146  ls
+  147  vi ansible.cfg 
+  148  cat hosts
+  149  ansible all -m ping
+  150  vi ansible.cfg 
+  151  ansible db1 -m setup
+  152  cd ..
+  153  cd /root
+  154  ls
+  155  mkdir devproject
+  156  cd devproject/
+  157  touch ansible.cfg
+  158  touch hosts
+  159  git config --global user.name "John Doe"
+  160  yum install git
+  161  git config --global user.name "John Doe"
+  162  git config --global user.name "gopal1409@gmail.com"
+  163  git init
+  164  git add .
+  165  git commit -m "ansible start project"
+  166   git config --global user.email "you@example.com"
+  167    git config --global user.name "Your Name"
+  168  git init
+  169  git add .
+  170  git commit -m "ansible project"
+  171  git remote add origin https://github.com/gopal1409/hclbatch4.git
+  172  git push -u origin master
+  173  ls
+  174  vi ansible.cfg 
+  175  vi hosts
+  176  git add .
+  177  git commit -m "ansible.cfg hosts file"
+  178  git push -u origin master
+  179  cat ansible.cfg 
+  180  cat hosts
+  181  cat ansible.cfg 
+  182  vi ansible.cfg 
+  183  vi motd.yaml
+  184  ansible-playbook motd.yaml 
+  185  vi motd.yaml 
+  186  ansible-playbook motd.yaml 
+  187  git add .
+  188  git commit -m "motd playbook"
+  189  git push -u origin master
+  190  vi motd.yaml 
+  191  ansible-playbook motd.yaml 
+  192  vi motd.yaml 
+  193  ansible-playbook motd.yaml 
+  194  git add .
+  195  git commit -m "added handler"
+  196  git push -u origin master
+  197  vi motd.yaml 
+  198  git add .
+  199  git commit -m "handler execution"
+  200  git push u origin master
+  201  git push -u origin master
+  202  ansible-playbook motd.yaml 
+  203  cat motd.yaml 
+  204  ansible db1 -m setup
+  205  ansible db1 -m setup | grep ansible_distribution
+  206  vi motd.yaml 
+  207  ansible-playbook motd.yaml 
+  208  vi motd.yaml 
+  209  git add .
+  210  git commit -m "When statemenet using ansible setup module"
+  211  git push -u origin master
+  212  ansible-playbook motd.yaml 
+  213  ls
+  214  cat hosts
+  215  vi install.yaml
+  216  ansible-playbook install.yaml 
+  217  vi install.yaml 
+  218  git add .
+  219  git commit -m "install apache"
+  220  git push -u origin master
+  221  ssh root@db1
+  222  vi install.yaml 
+  223  yum install vim -y
+  224  vim install.yaml 
+  225  ansible db1 -m setup | grep ansible_default_ipv4.address
+  226  cat /etc/hosts
+  227  ansible all -m ping
+  228  ansible db1 -m ping
+  229  ansible db1 -m setup
+  230  ansible db1 -m setup | grep ansible_default_ipv4
+  231  ansible db1 -m setup | grep ansible_default_ipv4.address
+  232  vi install.yaml 
+  233  ansible-playbook install.yaml 
+  234  vi install.yaml 
+  235  ansible-playbook install.yaml 
+  236  curl http://13.58.43.85
+  237  vi install.yaml 
+  238  curl http://13.58.43.85
+  239  ansible-playbook install.yaml 
+  240  ls
+  241  cd devproject/
+  242  ls
+  243  cat install.yaml 
+  244  cat ansible.cfg 
+  245  ls
+  246  cat hosts
+  247  touc variable.yaml
+  248  cat install.yaml 
+  249  vi variable.yaml
+  250  git add .
+  251  git commit -m "multi package install using varaiable"
+  252  git push -u origin master
+  253  ansible-playbook variable.yaml 
+  254  vi variable.yaml
+  255  git add .
+  256  git commmit -m "varaible with state"
+  257  git commit -m "varaible with state"
+  258  git push -u origin master
+  259  ansible-playbook variable.yaml 
+  260  vi variable.yaml
+  261  git add .
+  262  git commit -m "absent"
+  263  git push -u origin master
+  264  ansible-playbook variable.yaml 
+  265  cd devproject/
+  266  vi variable.yaml 
+  267  ansible-playbook variable.yaml 
+  268  vi variable.yaml 
+  269  ansible-playbook variable.yaml 
+  270  vi variable.yaml 
+  271  ansible-playbook variable.yaml 
+  272  vi variable.yaml 
+  273  ansible-playbook variable.yaml 
+  274  vi variable.yaml 
+  275  ansible-playbook variable.yaml 
+  276  vi variable.yaml 
+  277  ansible-playbook variable.yaml 
+  278  git add .
+  279  git commit -m "firewalld varaible"
+  280  git push -u origin master
+  281  cd devproject/
+  282  ls
+  283  vi variable.yaml 
+  284  cat variable.yaml 
+  285  vi variable.yaml 
+  286  ansible-playbook variable.yaml 
+  287  vi variable.yaml 
+  288  ansible-playbook variable.yaml 
+  289  vi variable.yaml 
+  290  ansible-playbook variable.yaml 
+  291  vi variable.yaml 
+  292  git add .
+  293  git commit -m "handler in ansible"
+  294  git push -u origin master
+  295  cd devproject/
+  296  vi variable.yaml 
+  297  git add .
+  298  git commit -m "lineinfile added"
+  299  git push -u origin master
+  300  ls
+  301  ansible-playbook variable.yaml 
+  302  vi variable.yaml 
+  303  ansible-playbook variable.yaml 
+  304  vi variable.yaml 
+  305  ansible-playbook variable.yaml 
+  306  vi variable.yaml 
+  307  cat variable.yaml 
+  308  vi variable.yaml 
+  309  ansible-playbook variable.yaml 
+  310  git add .
+  311  git commit -m "firewalld"
+  312  git push -u origin master
+  313  ssh root@db1
+  314  vi variable.yaml 
+  315  ansible-playbook variable.yaml 
+  316  git add .
+  317  git commit -m "with system varaibles"
+  318  git push -u origin master
+  319  ansible db1 -m setup
+  320  ansible db1 -m setup 
+  321  vi variable.yaml 
+  322  ansible-playbook variable.yaml 
+  323  ansible db1 -m setup | grep ansible_os_family
+  324  vi variable.yaml 
+  325  ansible-playbook variable.yaml 
+  326  git add .
+  327  git commit -m "using when statement"
+  328  git push -u origin master
+  329  vi variable.yaml 
+  330  ansible-playbook variable.yaml 
+  331  vi variable.yaml 
+  332  ansible-playbook variable.yaml 
+  333  vi variable.yaml 
+  334  cd /root/
+  335  ls
+  336  cd devproject/
+  337  ls
+  338  vi withitem.yaml
+  339  ansible-playbook withitem.yaml 
+  340  git add .
+  341  git commit -m "withitems"
+  342  git add .
+  343  git commit -m "withitem"
+  344  git push -u origin master
+  345  vi withitem.yaml
+  346  ansible-playbook withitem.yaml 
+  347  vi withitem.yaml
+  348  ansible-playbook withitem.yaml 
+  349  vi withitem.yaml
+  350  ansible-playbook withitem.yaml 
+  351  vi withitem.yaml
+  352  ansible-playbook withitem.yaml 
+  353  vi withitem.yaml
+  354  ansible-playbook withitem.yaml 
+  355  vi withitem.yaml
+  356  ansible-playbook withitem.yaml 
+  357  vi withitem.yaml
+  358  ansible-playbook withitem.yaml 
+  359  vi withitem.yaml
+  360  ansible-playbook withitem.yaml 
+  361  vi variable.yaml 
+  362  vi withitem.yaml 
+  363  ansible-playbook withitem.yaml 
+  364  git add .
+  365  git commit -m "with items user"
+  366  git push -u origin master
+  367  ssh root@db1
+  368  cd devproject/
+  369  ls
+  370  vi winip.yaml 
+  371  ansible-playbook winip.yaml -i /etc/ansible/hosts
+  372  vi winip.yaml 
+  373  ansible-playbook winip.yaml -i /etc/ansible/hosts
+  374  git add .
+  375  git commit -m "stat and assertion"
+  376  git push -u origin master
+  377  vi winip.yaml 
+  378  git push -u origin master
+  379  ansible-playbook winip.yaml -i /etc/ansible/hosts
+  380  vi winip.yaml 
+  381  ansible-playbook winip.yaml -i /etc/ansible/hosts
+  382  vi winip.yaml 
+  383  ansible-playbook winip.yaml -i /etc/ansible/hosts
+  384  vi winip.yaml 
+  385  ansible-playbook winip.yaml -i /etc/ansible/hosts
+  386  vi winip.yaml 
+  387  ansible-playbook winip.yaml -i /etc/ansible/hosts
+  388  vi winip.yaml 
+  389  copy winip.yaml winchoco.yaml
+  390  cp winip.yaml winchoco.yaml
+  391  ansible-playbook winchoco.yaml -i /etc/ansible/hosts
+  392  vi winchoco.yaml 
+  393  ansible-playbook winchoco.yaml -i /etc/ansible/hosts
+  394  git add .
+  395  git commit -m "chocolatey package manager"
+  396  git push -u origin master
+  397  vi winchoco.yaml 
+  398  ansible-playbook winchoco.yaml -i /etc/ansible/hosts
+  399  vi winchoco.yaml 
+  400  ansible-playbook winchoco.yaml -i /etc/ansible/hosts
+  401  vi winchoco.yaml 
+  402  ansible-playbook winchoco.yaml -i /etc/ansible/hosts
+  403  vi winchoco.yaml 
+  404  ansible-playbook winchoco.yaml -i /etc/ansible/hosts
+  405  vi winchoco.yaml 
+  406  ansible-playbook winchoco.yaml -i /etc/ansible/hosts
+  407  vi winchoco.yaml 
+  408  git add .
+  409  git commit -m "choco with loop"
+  410  git push -u origin master
+  411  vi winchoco.yaml 
+  412  vi ansible.cfg 
+  413  ansible-playbook winchoco.yaml -i /etc/ansible/ -v
+  414  cd /var/log/
+  415  ls
+  416  ls ansible
+  417  cd ./
+  418  ls
+  419  cd /
+  420  ls
+  421  cd ./
+  422  ls
+  423  cd /root
+  424  ls
+  425  cd devproject/
+  426  ls
+  427  cat ansible_log 
+  428  git add .
+  429  git commit -m "choco book with log in host file"
+  430  git push -u origin master
+  431  cat ansible
+  432  cat ansible.cfg 
+  433  vi /etc/hosts
+  434  cat /etc/hosts
+  435  vi /etc/ansible/hosts
+  436  ansible win -m win_ping
+  437  yum install python-pip
+  438  pip upgrade --install
+  439  pip install pywinrm
+  440  history
+  441  ansible win -m win_ping
+  442  ansible win -m setup
+  443  cat /etc/ansible/hosts
+  444  vi /etc/ansible/hosts
+  445  ansible win -m raw -a "dir"
+  446  ansible win -m win_service "name=spooler state=started"
+  447  ansible win -m win_service "name=spooler"
+  448  ansible win -m win_service -a "name=spooler"
+  449  ansible win -m win_service -a "name=spooler state=stopped"
+  450  ansible win -m win_feature -a "name=Telnet-Client sate=present"
+  451  ansible win -m win_feature -a "name=Telnet-Client state=present"
+  452  history
+  453  vi /etc/ansible/hosts
+  454  mkdir hosts_vars
+  455  cd hosts_vars/
+  456  touch win1
+  457  vi win1 
+  458  ansible-vault encrypt win1
+  459  cat win1 
+  460  ansible-vault decrypt win1
+  461  cat win1 
+  462  cd ..
+  463  ls
+  464  rm -rf hosts_vars/
+  465  ls
+  466  cd devproject/
+  467  ls
+  468  cat /etc/ansible/hosts
+  469  vi windows.yaml
+  470  git add .
+  471  git commit -m "windows playbook"
+  472  git push -u origin master
+  473  ansible-playbook windows.yaml 
+  474  cat hosts
+  475  cat ansible.cfg 
+  476  ansible-playbook windows.yaml -i /etc/ansible/hosts
+  477  vi windows.yaml 
+  478  ansible-playbook windows.yaml -i /etc/ansible/hosts
+  479  vi windows.yaml 
+  480  git add .
+  481  git commit -m "windows playbook"
+  482  git push -u origin master
+  483  ansible-playbook windows.yaml -i /etc/ansible/hosts
+  484  vi winip.yaml
+  485  ansible-playbook winip.yaml -i /etc/ansible/hosts
+  486  vi winip.yaml
+  487  ansible-playbook winip.yaml -i /etc/ansible/hosts
+  488  vi winip.yaml
+  489  ansible-playbook winip.yaml -i /etc/ansible/hosts
+  490  vi winip.yaml
+  491  ansible-playbook winip.yaml -i /etc/ansible/hosts
+  492  vi winip.yaml
+  493  mkdir files
+  494  cd files/
+  495  vi gethost.ps1
+  496  cd ..
+  497  ls
+  498  vi winip.yaml 
+  499  ansible-playbook winip.yaml -i /etc/ansible/hosts
+  500  vi files/gethost.ps1
+  501  ansible-playbook winip.yaml -i /etc/ansible/hosts
+  502  vi files/gethost.ps1
+  503  ls
+  504  cd devproject/
+  505  ls
+  506  ansible-playbook tomcat.yaml 
+  507  ssh root@db1
+  508  ansible-playbook tomcat.yaml 
+  509  vi tomcat.yaml 
+  510  ansible-playbook tomcat.yaml 
+  511  vi tomcat.yaml 
+  512  ansible-playbook tomcat.yaml 
+  513  vi tomcat.yaml 
+  514  ansible-playbook tomcat.yaml 
+  515  git add .
+  516  git commit -m "remove folder"
+  517  git push -u origin master
+  518  vi tomcat.yaml 
+  519  ssh root@db1
+  520  vi server.xml.j2
+  521  ls
+  522  vi server.xml.j2 
+  523  ansible-playbook tomcat.yaml --check
+  524  vi tomcat.yaml 
+  525  ansible-playbook tomcat.yaml --check
+  526  vi tomcat.yaml 
+  527  ansible-playbook tomcat.yaml --check
+  528  vi tomcat.yaml 
+  529  ansible-playbook tomcat.yaml --check
+  530  git add .
+  531  git commit -m "tomcat with custom port"
+  532  git push -u origin master
+  533  vi tomcat.yaml 
+  534  ansible-playbook tomcat.yaml --check
+  535  git add .
+  536  git commit -m "firewalld"
+  537  git push -u origin master
+  538  vi tomcat.yaml 
+  539  ansible-playbook tomcat.yaml --check
+  540  git add .
+  541  git commit -m " firewall started"
+  542  git push -u origin master
+  543  ls
+  544  cat server.xml.j2 
+  545  ls
+  546  cd devproject/
+  547  vi tomcat.yaml
+  548  ansible-playbook tomcat.yaml --check
+  549  vi tomcat.yaml
+  550  ansible-playbook tomcat.yaml --check
+  551  vi tomcat.yaml 
+  552  ansible-playbook tomcat.yaml --syntax-check
+  553  git add .
+  554  git commit -m "install java playbook"
+  555  git push -u origin master
+  556  ansible-playbook tomcat.yaml --syntax-check
+  557  ansible-playbook tomcat.yaml
+  558  vi tomcat.yaml 
+  559  git add .
+  560  git commit -m "java insta"
+  561  git push -u origin master
+  562  ansible-playbook tomcat.yaml --check
+  563  ansible-playbook tomcat.yaml
+  564  ssh root@db1
+  565  vi tomcat.yaml 
+  566  ansible-playbook tomcat.yaml
+  567  git add .
+  568  git commit -m "default path of java"
+  569  git push -u origin master
+  570  cat tomcat.yaml 
+  571  vi tomcat.yaml 
+  572  ansible-playbook tomcat.yaml 
+  573  git add .
+  574  git commit -m "java varaible"
+  575  git push -u origin master
+  576  python
+  577  vi tomcat.yaml 
+  578  ansible-playbook tomcat.yaml --check
+  579  vi tomcat.yaml 
+  580  ansible-playbook tomcat.yaml --check
+  581  ansible-playbook tomcat.yaml
+  582  vi tomcat.yaml 
+  583  ansible-playbook tomcat.yaml
+  584  vi tomcat.yaml 
+  585  yum install wget
+  586  wget https://downloads.apache.org/tomcat/tomcat-7/v7.0.107/bin/apache-tomcat-7.0.107.tar.gz
+  587  vi tomcat.yaml 
+  588  ansible-playbook tomcat.yaml
+  589  git add .
+  590  git commit -m "tomcat download varaible"
+  591  git push -u origin master
+  592  vi tomcat.yaml 
+  593  ansible-playbook tomcat.yaml --check
+  594  vi tomcat.yaml 
+  595  ansible-playbook tomcat.yaml --check
+  596  vi tomcat.yaml 
+  597  ansible-playbook tomcat.yaml --check
+  598  vi tomcat.yaml 
+  599  ansible-playbook tomcat.yaml --check
+  600  git add .
+  601  git commit -m "tomcat install"
+  602  git push -u origin master
+  603  vi tomcat.yaml 
+  604  git add .
+  605  git commit -m "remote src"
+  606  git push -u origin master
+  607  ansible-playbook tomcat.yaml 
+  608  ssh root@db1
+  609  ansible-playbook tomcat.yaml 
+  610  vi tomcat.yaml 
+  611  ansible-playbook tomcat.yaml 
+  612  vi tomcat.yaml 
+  613  ansible-playbook tomcat.yaml 
+  614  vi tomcat.yaml 
+  615  ansible-playbook tomcat.yaml 
+  616  vi tomcat.yaml 
+  617  ansible-playbook tomcat.yaml 
+  618  vi tomcat.yaml 
+  619  ansible-playbook tomcat.yaml 
+  620  git add .
+  621  git commit -m "install tomcat"
+  622  git push -u origin master
+  623  ssh root@db1
+  624  vi tomcat.yaml 
+  625  git add .
+  626  git commit -m "open port 8080"
+  627  git push -u origin master
+  628  vi tomcat.yaml 
+  629  git add .
+  630  git commit -m "firewalld immedaite rule"
+  631  git push -u origin master
+  632  vi tomcat.yaml 
+  633  git add .
+  634  git commit -m "change in immeidate in firewalld"
+  635  git push -u origin master
+  636  ls
+  637  cd devproject/
+  638  ansible-galaxy init apache
+  639  ls
+  640  tree apache
+  641  yum install apache
+  642  yum install tree
+  643  ls
+  644  tree apache
+  645  vi apache/meta/main.yml 
+  646  vi apache/README.md 
+  647  vi apache/tasks/main.yml 
+  648  vi apache/tasks/install.yaml
+  649  vi apache/tasks/main.yml 
+  650  vi apache/tasks/configure.yaml
+  651  vi apache/files/index.html
+  652  vi apache/tasks/main.yml 
+  653  vi apache/tasks/service.yaml
+  654  vi apache/handlers/main.yml 
+  655  tree
+  656  tree apache
+  657  ls
+  658  vi motd.yaml 
+  659  cat motd.yaml 
+  660  cp motd.yaml webserver.yaml
+  661  clear
+  662  ansible-playbook webserver.yaml 
+  663  vi apache/tasks/main.yml 
+  664  ansible-playbook webserver.yaml 
+  665  vi apache/handlers/main.yml 
+  666  ansible-playbook webserver.yaml 
+  667  git add .
+  668  git commit -m "apache roles"
+  669  git push -u origin master
+  670  vi apache/tasks/main.yml 
+  671  ansible-playbook webserver.yaml 
+  672  vi apache/tasks/main.yml 
+  673  vi apache/defaults/main.yml 
+  674  vi apache/tasks/service.yaml 
+  675  ansible-playbook webserver.yaml 
+  676  vi apache/tasks/service.yaml 
+  677  ansible-playbook webserver.yaml 
+  678  vi apache/defaults/main.yml 
+  679  ansible-playbook webserver.yaml 
+  680  vi apache/defaults/main.yml 
+  681  ansible-playbook webserver.yaml 
+  682  vi apache/tasks/service.yaml 
+  683  vi apache/defaults/main.yml 
+  684  vi apache/tasks/service.yaml 
+  685  ssh db1
+  686  ssh root@db1
+  687  ansible-galaxy init patch --offline
+  688  vi patch/tasks/main.yml 
+  689  ssh root@db1
+  690  vi patch/tasks/main.yml 
+  691  vi webserver.yaml 
+  692  ansible-playbook webserver.yaml 
+  693  git add .
+  694  git commit -m "patch roles"
+  695  git push -u origin master
+  696  vi webserver.yaml 
+  697  vi patch/tasks/main.yml 
+  698  ansible-playbook --syntax-check patch/tasks/main.yml 
+  699  ansible-playbook webserver.yaml 
+  700  git add .
+  701  git commit -m "using fail module"
+  702  git push -u origin master
+  703  vi patch/tasks/main.yml 
+  704  ssh root@db1
+  705  ansible-playbook --syntax-check patch/tasks/main.yml 
+  706  ansible-playbook webserver.yaml 
+  707  git add .
+  708  git commit -m "kernal update"
+  709  git push -u origin master
+  710  rpm -qa --last kernel
+  711  rpm -qa --last kernel | head -1
+  712  rpm -qa --last kernel | head -1 | awk '{print $1}' | sed 's/kernel-//g'
+  713  vi patch/tasks/main.yml 
+  714  cat /etc/ansible/ansible.cfg 
+  715  q!
+  716  vi patch/tasks/main.yml 
+  717  ansible-playbook webserver.yaml 
+  718  git add .
+  719  git commit -m " full patch "
+  720  git push -u origin master
+  721  ssh root@db1
+  722  ansible-playbook webserver.yaml 
+  723  vi webserver.yaml 
+  724  ssh db1
+  725  ansible-playbook webserver.yaml 
+  726  vi patch/tasks/main.yml 
+  727  git add .
+  728  git commit -m "stdout error"
+  729  git push -u origin master
+  730  ansible-playbook webserver.yaml 
+  731  vi webserver.yaml 
+  732  vi apache/tasks/main.yml 
+  733  ansible-playbook webserver.yaml 
+  734  git add .
+  735  git commit -m "no patch role will run"
+  736  git push -u origin master
+  737  uptime
+  738  shutdown -r now
+  739  ls
+  740  cd devproject/
+  741  ls
+  742  cat tomcat.yaml 
+  743  ansible galaxy install geerlinggguy.mysql
+  744  ansible-galaxy install geerlinggguy.mysql
+  745  ansible-galaxy install geerlingguy.mysql
+  746  ls
+  747  cd /etc/ansible/
+  748  ls
+  749  cd roles/
+  750  ls
+  751  cd /root
+  752  ls
+  753  cd devproject/
+  754  ls
+  755  ansible-galaxy init tomcat
+  756  cat tomcat
+  757  cat tomcat.yaml 
+  758  ls
+  759  vi tomcat/defaults/main.yml 
+  760  vi tomcat/tasks/main.yml 
+  761  vi webserver.yaml 
+  762  ansible-playbook webserver.yaml 
+  763  vi tomcat/defaults/main.yml 
+  764  ansible-playbook webserver.yaml 
+  765  vi tomcat/tasks/main.yml 
+  766  cd tomcat/tasks/
+  767  exit
+  768  cd ..
+  769  vi tomcat/tasks/java.yaml
+  770  vi tomcat/tasks/tomcat.yaml
+  771  ansible-playbook webserver.yaml 
+  772  vi tomcat/tasks/main.yml 
+  773  ansible-playbook webserver.yaml 
+  774  cd tomcat/
+  775  ls
+  776  cd tasks/
+  777  ls
+  778  vi main.yml 
+  779  cd ..
+  780  ansible-playbook webserver.yaml 
+  781  git add .
+  782  git commit -m "tomcat"
+  783  git push -u origin master
+  784  uptime
+  785  ls
+  786  cd devproject/
+  787  ls
+  788  vi patch/tasks/main.yml 
+  789  uptime
+  790  ssh root@db1
+  791  ansible-playbook webserver.yaml 
+  792  vi patch/tasks/main.yml 
+  793  ansible-playbook webserver.yaml 
+  794  ssh root@db1
+  795  ansible-playbook webserver.yaml 
+  796  uptime
+  797  vi patch/tasks/main.yml 
+  798  ansible-playbook webserver.yaml 
+  799  ssh db1
+  800  ansible-playbook webserver.yaml 
+  801  vi patch/tasks/main.yml 
+  802  ansible-playbook webserver.yaml 
+  803  ssh root@db1
+  804  ansible-playbook webserver.yaml 
+  805  ssh root@db1
+  806  git add .
+  807  git commit -m "patch error"
+  808  git push -u origin master
+  809  yum install python-pip
+  810  pip install --upgrade
+  811  pip help install
+  812  pip install boto
+  813  pip install boto3
+  814  pip install awscli
+  815  history
+  816  ls
+  817  cd devproject/
+  818  aws configure
+  819  aws s3 ls
+  820  vi ec2securitygroup.yaml
+  821  aws configure
+  822  ansible-playbook ec2securitygroup.yaml 
+  823  aws configure
+  824  ansible-playbook ec2securitygroup.yaml 
+  825  git add .
+  826  git commit -m "security group in aws"
+  827  git push -u origin master
+  828  vi ec2securitygroup.yaml 
+  829  ansible-playbook ec2securitygroup.yaml --syntax-check
+  830  vi ec2securitygroup.yaml 
+  831  git add .
+  832  git commit -m "ansible playbook to launch ec2 instance"
+  833  git push -u origin master
+  834  vi ec2securitygroup.yaml 
+  835  git add .
+  836  git commit -m "ansible playbook to launch ec2 instance"
+  837  git push -u origin master
+  838  ansible-playbook ec2securitygroup.yaml --syntax-check
+  839  ansible-playbook ec2securitygroup.yaml 
+  840  vi ec2securitygroup.yaml 
+  841  ansible-playbook ec2securitygroup.yaml 
+  842  vi ec2securitygroup.yaml 
+  843  ansible-playbook ec2securitygroup.yaml 
+  844  vi ec2securitygroup.yaml 
+  845  ansible-playbook ec2securitygroup.yaml 
+  846  vi ec2securitygroup.yaml 
+  847  ansible-playbook ec2securitygroup.yaml 
+  848  vi ec2securitygroup.yaml 
+  849  ansible-playbook ec2securitygroup.yaml 
+  850  vi ec2securitygroup.yaml 
+  851  ansible-playbook ec2securitygroup.yaml 
+  852  vi ec2securitygroup.yaml 
+  853  ansible-playbook ec2securitygroup.yaml 
+  854  vi ec2securitygroup.yaml 
+  855  ansible-playbook ec2securitygroup.yaml 
+  856  git add .
+  857  git commit -m "groups issue resolved"
+  858  git push -u origin master
+  859  vi ec2securitygroup.yaml 
+  860  cat ec2securitygroup.yaml 
+  861  vi ec2securitygroup.yaml 
+  862  ansible-playbook --syntax-check
+  863  ansible-playbook ec2securitygroup.yaml --syntax-check
+  864  ansible-galaxy init awsomeweb
+  865  ansible-playbook ec2securitygroup.yaml --syntax-check
+  866  ls
+  867  vi awsomeweb/defaults/main.yml 
+  868  vi awsomeweb/tasks/main.yml 
+  869  vi awsomeweb/templates/index.html.j2
+  870  ansible-playbook ec2securitygroup.yaml --syntax-check
+  871  git add .
+  872  git commit -m "instance launch with roles awsome web"
+  873  git push -u origin master
+  874  vi ec2securitygroup.yaml 
+  875  cat awsomeweb/defaults/main.yml 
+  876  cat awsomeweb/tasks/main.yml 
+  877  vi ec2securitygroup.yaml 
+  878  mkdir group_vars
+  879  cd group_vars/
+  880  vi tag_Name_Ansible
+  881  cd ..
+  882  cat group_vars/tag_Name_Ansible 
+  883  vi ~/.ssh/ansible.pem
+  884  chmod 400 ~/.ssh/ansible.pem 
+  885  history > todaycommandcloud.txt
