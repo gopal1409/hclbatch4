@@ -30,16 +30,17 @@
               cidr_ip: 0.0.0.0/0
     - name: Provision an instance
       ec2:
-        key_name: linux4
+        key_name: linux4 #change the keypair and put your own key pair
         group: ansible
         instance_type: t2.micro
+        image: ami-0a0ad6b70e61be944
         region: us-east-2
         wait: true
         exact_count: 1
         count_tag:
-          Name: AnsibleNginxWebservers
+          Name: AnsibleNginxWebservers-gopal #tag value
         instance_tags:
-          Name: ansible-gopal
+          Name: ansible-gopal #Put your own name
       register: ec2
     - name: display the public ip of instance
       add_host:
