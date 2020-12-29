@@ -1,0 +1,3 @@
+---
+# defaults file for awsomeweb
+target_dir: /usr/share/nginx/index.html
