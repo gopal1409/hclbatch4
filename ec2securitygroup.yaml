@@ -51,7 +51,7 @@
       debug:
         var: groups.ansiblehosts
     - name: refresh inventory to ensure new instance exist
-      meta: refrest_inventory
+      meta: refresh_inventory
 -
  # target where our play willl run 
  hosts: tag_Name_Ansible

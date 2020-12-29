@@ -1440,3 +1440,105 @@ The offending line appears to be:
 2020-12-29 15:47:41,499 p=11896 u=root n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: tag_Name_Ansible
 
 2020-12-29 15:47:41,500 p=11896 u=root n=ansible | playbook: ec2securitygroup.yaml
+2020-12-29 16:01:44,362 p=12148 u=root n=ansible | PLAY [localhost] *********************************************************************************************************************
+2020-12-29 16:01:44,370 p=12148 u=root n=ansible | TASK [Create a security group in AWS for SSH access and HTTP] ************************************************************************
+2020-12-29 16:01:46,405 p=12148 u=root n=ansible | ok: [localhost]
+2020-12-29 16:01:46,409 p=12148 u=root n=ansible | TASK [Provision an instance] *********************************************************************************************************
+2020-12-29 16:02:19,276 p=12148 u=root n=ansible | changed: [localhost]
+2020-12-29 16:02:19,281 p=12148 u=root n=ansible | TASK [display the public ip of instance] *********************************************************************************************
+2020-12-29 16:02:19,329 p=12148 u=root n=ansible | changed: [localhost] => (item={u'ramdisk': None, u'kernel': None, u'root_device_type': u'ebs', u'private_dns_name': u'ip-172-31-40-128.us-east-2.compute.internal', u'block_device_mapping': {u'/dev/xvda': {u'status': u'attached', u'delete_on_termination': True, u'volume_id': u'vol-0f9ff4bc619ba1fc9'}}, u'key_name': u'linux4', u'public_ip': u'18.223.115.69', u'image_id': u'ami-0a0ad6b70e61be944', u'tenancy': u'default', u'private_ip': u'172.31.40.128', u'groups': {u'sg-02e24bfcc8e826f00': u'ansible-gopal'}, u'public_dns_name': u'ec2-18-223-115-69.us-east-2.compute.amazonaws.com', u'state_code': 16, u'id': u'i-01b00635c0eeb6f33', u'tags': {u'Name': u'ansible-gopal'}, u'placement': u'us-east-2c', u'ami_launch_index': u'0', u'dns_name': u'ec2-18-223-115-69.us-east-2.compute.amazonaws.com', u'region': u'us-east-2', u'ebs_optimized': False, u'launch_time': u'2020-12-29T16:01:48.000Z', u'instance_type': u't2.micro', u'state': u'running', u'architecture': u'x86_64', u'hypervisor': u'xen', u'virtualization_type': u'hvm', u'root_device_name': u'/dev/xvda'})
+2020-12-29 16:02:19,335 p=12148 u=root n=ansible | TASK [show the group] ****************************************************************************************************************
+2020-12-29 16:02:19,372 p=12148 u=root n=ansible | ok: [localhost] => {
+    "groups.ansiblehosts": [
+        "18.223.115.69"
+    ]
+}
+2020-12-29 16:02:19,373 p=12148 u=root n=ansible | ERROR! invalid meta action requested: refrest_inventory
+
+The error appears to be in '/root/devproject/ec2securitygroup.yaml': line 53, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+        var: groups.ansiblehosts
+    - name: refresh inventory to ensure new instance exist
+      ^ here
+
+2020-12-29 16:02:30,099 p=12207 u=root n=ansible | PLAY [localhost] *********************************************************************************************************************
+2020-12-29 16:02:30,107 p=12207 u=root n=ansible | TASK [Create a security group in AWS for SSH access and HTTP] ************************************************************************
+2020-12-29 16:02:54,082 p=12241 u=root n=ansible | PLAY [localhost] *********************************************************************************************************************
+2020-12-29 16:02:54,091 p=12241 u=root n=ansible | TASK [Create a security group in AWS for SSH access and HTTP] ************************************************************************
+2020-12-29 16:02:56,049 p=12241 u=root n=ansible | ok: [localhost]
+2020-12-29 16:02:56,053 p=12241 u=root n=ansible | TASK [Provision an instance] *********************************************************************************************************
+2020-12-29 16:03:18,470 p=12241 u=root n=ansible | changed: [localhost]
+2020-12-29 16:03:18,475 p=12241 u=root n=ansible | TASK [display the public ip of instance] *********************************************************************************************
+2020-12-29 16:03:18,522 p=12241 u=root n=ansible | changed: [localhost] => (item={u'ramdisk': None, u'kernel': None, u'root_device_type': u'ebs', u'private_dns_name': u'ip-172-31-47-158.us-east-2.compute.internal', u'block_device_mapping': {u'/dev/xvda': {u'status': u'attached', u'delete_on_termination': True, u'volume_id': u'vol-0bc48a1ec87937ed5'}}, u'key_name': u'linux4', u'public_ip': u'18.191.48.76', u'image_id': u'ami-0a0ad6b70e61be944', u'tenancy': u'default', u'private_ip': u'172.31.47.158', u'groups': {u'sg-02e24bfcc8e826f00': u'ansible-gopal'}, u'public_dns_name': u'ec2-18-191-48-76.us-east-2.compute.amazonaws.com', u'state_code': 16, u'id': u'i-042633a8bee2d258d', u'tags': {u'Name': u'ansible-gopal'}, u'placement': u'us-east-2c', u'ami_launch_index': u'0', u'dns_name': u'ec2-18-191-48-76.us-east-2.compute.amazonaws.com', u'region': u'us-east-2', u'ebs_optimized': False, u'launch_time': u'2020-12-29T16:02:57.000Z', u'instance_type': u't2.micro', u'state': u'running', u'architecture': u'x86_64', u'hypervisor': u'xen', u'virtualization_type': u'hvm', u'root_device_name': u'/dev/xvda'})
+2020-12-29 16:03:18,527 p=12241 u=root n=ansible | TASK [show the group] ****************************************************************************************************************
+2020-12-29 16:03:18,564 p=12241 u=root n=ansible | ok: [localhost] => {
+    "groups.ansiblehosts": [
+        "18.191.48.76"
+    ]
+}
+2020-12-29 16:03:18,566 p=12241 u=root n=ansible | ERROR! invalid meta action requested: refres_inventory
+
+The error appears to be in '/root/devproject/ec2securitygroup.yaml': line 53, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+        var: groups.ansiblehosts
+    - name: refresh inventory to ensure new instance exist
+      ^ here
+
+2020-12-29 16:03:41,764 p=12302 u=root n=ansible | PLAY [localhost] *********************************************************************************************************************
+2020-12-29 16:03:41,772 p=12302 u=root n=ansible | TASK [Create a security group in AWS for SSH access and HTTP] ************************************************************************
+2020-12-29 16:03:43,842 p=12302 u=root n=ansible | ok: [localhost]
+2020-12-29 16:03:43,845 p=12302 u=root n=ansible | TASK [Provision an instance] *********************************************************************************************************
+2020-12-29 16:04:01,174 p=12302 u=root n=ansible | changed: [localhost]
+2020-12-29 16:04:01,179 p=12302 u=root n=ansible | TASK [display the public ip of instance] *********************************************************************************************
+2020-12-29 16:04:01,225 p=12302 u=root n=ansible | changed: [localhost] => (item={u'ramdisk': None, u'kernel': None, u'root_device_type': u'ebs', u'private_dns_name': u'ip-172-31-37-45.us-east-2.compute.internal', u'block_device_mapping': {u'/dev/xvda': {u'status': u'attached', u'delete_on_termination': True, u'volume_id': u'vol-0d964be214cdc4352'}}, u'key_name': u'linux4', u'public_ip': u'3.14.84.149', u'image_id': u'ami-0a0ad6b70e61be944', u'tenancy': u'default', u'private_ip': u'172.31.37.45', u'groups': {u'sg-02e24bfcc8e826f00': u'ansible-gopal'}, u'public_dns_name': u'ec2-3-14-84-149.us-east-2.compute.amazonaws.com', u'state_code': 16, u'id': u'i-09088f03a108d48e8', u'tags': {u'Name': u'ansible-gopal'}, u'placement': u'us-east-2c', u'ami_launch_index': u'0', u'dns_name': u'ec2-3-14-84-149.us-east-2.compute.amazonaws.com', u'region': u'us-east-2', u'ebs_optimized': False, u'launch_time': u'2020-12-29T16:03:45.000Z', u'instance_type': u't2.micro', u'state': u'running', u'architecture': u'x86_64', u'hypervisor': u'xen', u'virtualization_type': u'hvm', u'root_device_name': u'/dev/xvda'})
+2020-12-29 16:04:01,231 p=12302 u=root n=ansible | TASK [show the group] ****************************************************************************************************************
+2020-12-29 16:04:01,268 p=12302 u=root n=ansible | ok: [localhost] => {
+    "groups.ansiblehosts": [
+        "3.14.84.149"
+    ]
+}
+2020-12-29 16:04:01,276 p=12302 u=root n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: tag_Name_Ansible
+
+2020-12-29 16:04:01,277 p=12302 u=root n=ansible | PLAY [tag_Name_Ansible] **************************************************************************************************************
+2020-12-29 16:04:01,277 p=12302 u=root n=ansible | skipping: no hosts matched
+2020-12-29 16:04:01,277 p=12302 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-29 16:04:01,278 p=12302 u=root n=ansible | localhost                  : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-12-29 16:07:29,198 p=12388 u=root n=ansible | PLAY [localhost] *********************************************************************************************************************
+2020-12-29 16:07:29,206 p=12388 u=root n=ansible | TASK [Create a security group in AWS for SSH access and HTTP] ************************************************************************
+2020-12-29 16:07:31,257 p=12388 u=root n=ansible | ok: [localhost]
+2020-12-29 16:07:31,261 p=12388 u=root n=ansible | TASK [Provision an instance] *********************************************************************************************************
+2020-12-29 16:07:32,545 p=12388 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Instance creation failed => VcpuLimitExceeded: You have requested more vCPU capacity than your current vCPU limit of 32 allows for the instance bucket that the specified instance type belongs to. Please visit http://aws.amazon.com/contact-us/ec2-request to request an adjustment to this limit."}
+2020-12-29 16:07:32,547 p=12388 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-29 16:07:32,547 p=12388 u=root n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-29 16:08:13,979 p=12445 u=root n=ansible | PLAY [localhost] *********************************************************************************************************************
+2020-12-29 16:08:13,987 p=12445 u=root n=ansible | TASK [Create a security group in AWS for SSH access and HTTP] ************************************************************************
+2020-12-29 16:08:15,932 p=12445 u=root n=ansible | ok: [localhost]
+2020-12-29 16:08:15,936 p=12445 u=root n=ansible | TASK [Provision an instance] *********************************************************************************************************
+2020-12-29 16:08:17,254 p=12445 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Instance creation failed => VcpuLimitExceeded: You have requested more vCPU capacity than your current vCPU limit of 32 allows for the instance bucket that the specified instance type belongs to. Please visit http://aws.amazon.com/contact-us/ec2-request to request an adjustment to this limit."}
+2020-12-29 16:08:17,256 p=12445 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-29 16:08:17,257 p=12445 u=root n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-29 16:09:34,936 p=12501 u=root n=ansible | PLAY [localhost] *********************************************************************************************************************
+2020-12-29 16:09:34,944 p=12501 u=root n=ansible | TASK [Create a security group in AWS for SSH access and HTTP] ************************************************************************
+2020-12-29 16:09:36,898 p=12501 u=root n=ansible | ok: [localhost]
+2020-12-29 16:09:36,903 p=12501 u=root n=ansible | TASK [Provision an instance] *********************************************************************************************************
+2020-12-29 16:09:59,458 p=12501 u=root n=ansible | changed: [localhost]
+2020-12-29 16:09:59,462 p=12501 u=root n=ansible | TASK [display the public ip of instance] *********************************************************************************************
+2020-12-29 16:09:59,508 p=12501 u=root n=ansible | changed: [localhost] => (item={u'ramdisk': None, u'kernel': None, u'root_device_type': u'ebs', u'private_dns_name': u'ip-172-31-20-1.us-east-2.compute.internal', u'block_device_mapping': {u'/dev/xvda': {u'status': u'attached', u'delete_on_termination': True, u'volume_id': u'vol-0b5f9bc7fa0b6cec4'}}, u'key_name': u'linux4', u'public_ip': u'18.224.150.232', u'image_id': u'ami-0a0ad6b70e61be944', u'tenancy': u'default', u'private_ip': u'172.31.20.1', u'groups': {u'sg-02e24bfcc8e826f00': u'ansible-gopal'}, u'public_dns_name': u'ec2-18-224-150-232.us-east-2.compute.amazonaws.com', u'state_code': 16, u'id': u'i-0c3c5e346b96de687', u'tags': {u'Name': u'ansible-gopal'}, u'placement': u'us-east-2b', u'ami_launch_index': u'0', u'dns_name': u'ec2-18-224-150-232.us-east-2.compute.amazonaws.com', u'region': u'us-east-2', u'ebs_optimized': False, u'launch_time': u'2020-12-29T16:09:38.000Z', u'instance_type': u't2.micro', u'state': u'running', u'architecture': u'x86_64', u'hypervisor': u'xen', u'virtualization_type': u'hvm', u'root_device_name': u'/dev/xvda'})
+2020-12-29 16:09:59,514 p=12501 u=root n=ansible | TASK [show the group] ****************************************************************************************************************
+2020-12-29 16:09:59,551 p=12501 u=root n=ansible | ok: [localhost] => {
+    "groups.ansiblehosts": [
+        "18.224.150.232"
+    ]
+}
+2020-12-29 16:09:59,559 p=12501 u=root n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: tag_Name_Ansible
+
+2020-12-29 16:09:59,560 p=12501 u=root n=ansible | PLAY [tag_Name_Ansible] **************************************************************************************************************
+2020-12-29 16:09:59,560 p=12501 u=root n=ansible | skipping: no hosts matched
+2020-12-29 16:09:59,560 p=12501 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-29 16:09:59,561 p=12501 u=root n=ansible | localhost                  : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
