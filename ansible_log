@@ -1338,3 +1338,87 @@ https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.
 2020-12-29 14:51:59,619 p=10840 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
 2020-12-29 14:51:59,619 p=10840 u=root n=ansible | localhost                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2020-12-29 15:07:46,463 p=10981 u=root n=ansible | playbook: ec2securitygroup.yaml
+2020-12-29 15:17:11,132 p=11102 u=root n=ansible | playbook: ec2securitygroup.yaml
+2020-12-29 15:17:24,900 p=11111 u=root n=ansible | PLAY [localhost] *********************************************************************************************************************
+2020-12-29 15:17:24,908 p=11111 u=root n=ansible | TASK [Create a security group in AWS for SSH access and HTTP] ************************************************************************
+2020-12-29 15:17:26,957 p=11111 u=root n=ansible | ok: [localhost]
+2020-12-29 15:17:26,961 p=11111 u=root n=ansible | TASK [Provision an instance] *********************************************************************************************************
+2020-12-29 15:17:27,681 p=11111 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "The following group names are not valid: ansible"}
+2020-12-29 15:17:27,684 p=11111 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-29 15:17:27,684 p=11111 u=root n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-29 15:18:18,454 p=11177 u=root n=ansible | PLAY [localhost] *********************************************************************************************************************
+2020-12-29 15:18:18,463 p=11177 u=root n=ansible | TASK [Create a security group in AWS for SSH access and HTTP] ************************************************************************
+2020-12-29 15:18:20,522 p=11177 u=root n=ansible | ok: [localhost]
+2020-12-29 15:18:20,526 p=11177 u=root n=ansible | TASK [Provision an instance] *********************************************************************************************************
+2020-12-29 15:18:48,351 p=11177 u=root n=ansible | changed: [localhost]
+2020-12-29 15:18:48,356 p=11177 u=root n=ansible | TASK [display the public ip of instance] *********************************************************************************************
+2020-12-29 15:18:48,403 p=11177 u=root n=ansible | changed: [localhost] => (item={u'ramdisk': None, u'kernel': None, u'root_device_type': u'ebs', u'private_dns_name': u'ip-172-31-14-66.us-east-2.compute.internal', u'block_device_mapping': {u'/dev/xvda': {u'status': u'attached', u'delete_on_termination': True, u'volume_id': u'vol-04a791e031e444d24'}}, u'key_name': u'linux4', u'public_ip': u'3.22.242.58', u'image_id': u'ami-0a0ad6b70e61be944', u'tenancy': u'default', u'private_ip': u'172.31.14.66', u'groups': {u'sg-02e24bfcc8e826f00': u'ansible-gopal'}, u'public_dns_name': u'ec2-3-22-242-58.us-east-2.compute.amazonaws.com', u'state_code': 16, u'id': u'i-06e0d722018293ffa', u'tags': {u'Name': u'ansible-gopal'}, u'placement': u'us-east-2a', u'ami_launch_index': u'0', u'dns_name': u'ec2-3-22-242-58.us-east-2.compute.amazonaws.com', u'region': u'us-east-2', u'ebs_optimized': False, u'launch_time': u'2020-12-29T15:18:22.000Z', u'instance_type': u't2.micro', u'state': u'running', u'architecture': u'x86_64', u'hypervisor': u'xen', u'virtualization_type': u'hvm', u'root_device_name': u'/dev/xvda'})
+2020-12-29 15:18:48,409 p=11177 u=root n=ansible | TASK [show the group] ****************************************************************************************************************
+2020-12-29 15:18:48,444 p=11177 u=root n=ansible | ok: [localhost] => {
+    "group.ansiblehosts": "VARIABLE IS NOT DEFINED!"
+}
+2020-12-29 15:18:48,447 p=11177 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-29 15:18:48,447 p=11177 u=root n=ansible | localhost                  : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-12-29 15:19:45,402 p=11252 u=root n=ansible | PLAY [localhost] *********************************************************************************************************************
+2020-12-29 15:19:45,410 p=11252 u=root n=ansible | TASK [Create a security group in AWS for SSH access and HTTP] ************************************************************************
+2020-12-29 15:19:47,319 p=11252 u=root n=ansible | ok: [localhost]
+2020-12-29 15:19:47,323 p=11252 u=root n=ansible | TASK [Provision an instance] *********************************************************************************************************
+2020-12-29 15:19:48,001 p=11252 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "The following group names are not valid: ansiblegopal"}
+2020-12-29 15:19:48,003 p=11252 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-29 15:19:48,003 p=11252 u=root n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-29 15:20:43,372 p=11322 u=root n=ansible | PLAY [localhost] *********************************************************************************************************************
+2020-12-29 15:20:43,381 p=11322 u=root n=ansible | TASK [Create a security group in AWS for SSH access and HTTP] ************************************************************************
+2020-12-29 15:20:45,318 p=11322 u=root n=ansible | ok: [localhost]
+2020-12-29 15:20:45,323 p=11322 u=root n=ansible | TASK [Provision an instance] *********************************************************************************************************
+2020-12-29 15:20:45,995 p=11322 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "The following group names are not valid: ansible"}
+2020-12-29 15:20:45,998 p=11322 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-29 15:20:45,998 p=11322 u=root n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-29 15:21:51,214 p=11380 u=root n=ansible | PLAY [localhost] *********************************************************************************************************************
+2020-12-29 15:21:51,222 p=11380 u=root n=ansible | TASK [Create a security group in AWS for SSH access and HTTP] ************************************************************************
+2020-12-29 15:21:53,189 p=11380 u=root n=ansible | ok: [localhost]
+2020-12-29 15:21:53,193 p=11380 u=root n=ansible | TASK [Provision an instance] *********************************************************************************************************
+2020-12-29 15:21:53,864 p=11380 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "The following group names are not valid: webserver"}
+2020-12-29 15:21:53,867 p=11380 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-29 15:21:53,867 p=11380 u=root n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-29 15:22:48,738 p=11436 u=root n=ansible | PLAY [localhost] *********************************************************************************************************************
+2020-12-29 15:22:48,746 p=11436 u=root n=ansible | TASK [Create a security group in AWS for SSH access and HTTP] ************************************************************************
+2020-12-29 15:22:50,821 p=11436 u=root n=ansible | ok: [localhost]
+2020-12-29 15:22:50,825 p=11436 u=root n=ansible | TASK [Provision an instance] *********************************************************************************************************
+2020-12-29 15:22:51,523 p=11436 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "The following group names are not valid: webserver"}
+2020-12-29 15:22:51,526 p=11436 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-29 15:22:51,526 p=11436 u=root n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-29 15:23:26,176 p=11491 u=root n=ansible | PLAY [localhost] *********************************************************************************************************************
+2020-12-29 15:23:26,185 p=11491 u=root n=ansible | TASK [Create a security group in AWS for SSH access and HTTP] ************************************************************************
+2020-12-29 15:23:28,167 p=11491 u=root n=ansible | ok: [localhost]
+2020-12-29 15:23:28,171 p=11491 u=root n=ansible | TASK [Provision an instance] *********************************************************************************************************
+2020-12-29 15:23:28,875 p=11491 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "The following group names are not valid: ansible-group"}
+2020-12-29 15:23:28,878 p=11491 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-29 15:23:28,878 p=11491 u=root n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-29 15:23:51,896 p=11547 u=root n=ansible | PLAY [localhost] *********************************************************************************************************************
+2020-12-29 15:23:51,904 p=11547 u=root n=ansible | TASK [Create a security group in AWS for SSH access and HTTP] ************************************************************************
+2020-12-29 15:23:53,937 p=11547 u=root n=ansible | ok: [localhost]
+2020-12-29 15:23:53,941 p=11547 u=root n=ansible | TASK [Provision an instance] *********************************************************************************************************
+2020-12-29 15:24:16,585 p=11547 u=root n=ansible | changed: [localhost]
+2020-12-29 15:24:16,590 p=11547 u=root n=ansible | TASK [display the public ip of instance] *********************************************************************************************
+2020-12-29 15:24:16,637 p=11547 u=root n=ansible | changed: [localhost] => (item={u'ramdisk': None, u'kernel': None, u'root_device_type': u'ebs', u'private_dns_name': u'ip-172-31-44-9.us-east-2.compute.internal', u'block_device_mapping': {u'/dev/xvda': {u'status': u'attached', u'delete_on_termination': True, u'volume_id': u'vol-025ecd7f040cf27d5'}}, u'key_name': u'linux4', u'public_ip': u'18.219.218.140', u'image_id': u'ami-0a0ad6b70e61be944', u'tenancy': u'default', u'private_ip': u'172.31.44.9', u'groups': {u'sg-02e24bfcc8e826f00': u'ansible-gopal'}, u'public_dns_name': u'ec2-18-219-218-140.us-east-2.compute.amazonaws.com', u'state_code': 16, u'id': u'i-01f7baf45abe1ae7c', u'tags': {u'Name': u'ansible-gopal'}, u'placement': u'us-east-2c', u'ami_launch_index': u'0', u'dns_name': u'ec2-18-219-218-140.us-east-2.compute.amazonaws.com', u'region': u'us-east-2', u'ebs_optimized': False, u'launch_time': u'2020-12-29T15:23:55.000Z', u'instance_type': u't2.micro', u'state': u'running', u'architecture': u'x86_64', u'hypervisor': u'xen', u'virtualization_type': u'hvm', u'root_device_name': u'/dev/xvda'})
+2020-12-29 15:24:16,642 p=11547 u=root n=ansible | TASK [show the group] ****************************************************************************************************************
+2020-12-29 15:24:16,678 p=11547 u=root n=ansible | ok: [localhost] => {
+    "group.ansiblehosts": "VARIABLE IS NOT DEFINED!"
+}
+2020-12-29 15:24:16,681 p=11547 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-29 15:24:16,681 p=11547 u=root n=ansible | localhost                  : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-12-29 15:25:05,036 p=11608 u=root n=ansible | PLAY [localhost] *********************************************************************************************************************
+2020-12-29 15:25:05,044 p=11608 u=root n=ansible | TASK [Create a security group in AWS for SSH access and HTTP] ************************************************************************
+2020-12-29 15:25:07,016 p=11608 u=root n=ansible | ok: [localhost]
+2020-12-29 15:25:07,020 p=11608 u=root n=ansible | TASK [Provision an instance] *********************************************************************************************************
+2020-12-29 15:25:29,576 p=11608 u=root n=ansible | changed: [localhost]
+2020-12-29 15:25:29,581 p=11608 u=root n=ansible | TASK [display the public ip of instance] *********************************************************************************************
+2020-12-29 15:25:29,628 p=11608 u=root n=ansible | changed: [localhost] => (item={u'ramdisk': None, u'kernel': None, u'root_device_type': u'ebs', u'private_dns_name': u'ip-172-31-36-177.us-east-2.compute.internal', u'block_device_mapping': {u'/dev/xvda': {u'status': u'attached', u'delete_on_termination': True, u'volume_id': u'vol-0a45869bd91d35a79'}}, u'key_name': u'linux4', u'public_ip': u'3.15.199.255', u'image_id': u'ami-0a0ad6b70e61be944', u'tenancy': u'default', u'private_ip': u'172.31.36.177', u'groups': {u'sg-02e24bfcc8e826f00': u'ansible-gopal'}, u'public_dns_name': u'ec2-3-15-199-255.us-east-2.compute.amazonaws.com', u'state_code': 16, u'id': u'i-053c54e2f8ef52d35', u'tags': {u'Name': u'ansible-gopal'}, u'placement': u'us-east-2c', u'ami_launch_index': u'0', u'dns_name': u'ec2-3-15-199-255.us-east-2.compute.amazonaws.com', u'region': u'us-east-2', u'ebs_optimized': False, u'launch_time': u'2020-12-29T15:25:08.000Z', u'instance_type': u't2.micro', u'state': u'running', u'architecture': u'x86_64', u'hypervisor': u'xen', u'virtualization_type': u'hvm', u'root_device_name': u'/dev/xvda'})
+2020-12-29 15:25:29,634 p=11608 u=root n=ansible | TASK [show the group] ****************************************************************************************************************
+2020-12-29 15:25:29,672 p=11608 u=root n=ansible | ok: [localhost] => {
+    "groups.ansiblehosts": [
+        "3.15.199.255"
+    ]
+}
+2020-12-29 15:25:29,674 p=11608 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2020-12-29 15:25:29,674 p=11608 u=root n=ansible | localhost                  : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
