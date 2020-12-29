@@ -1337,3 +1337,4 @@ https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.
 2020-12-29 14:51:59,616 p=10840 u=root n=ansible | changed: [localhost]
 2020-12-29 14:51:59,619 p=10840 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
 2020-12-29 14:51:59,619 p=10840 u=root n=ansible | localhost                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-12-29 15:07:46,463 p=10981 u=root n=ansible | playbook: ec2securitygroup.yaml
